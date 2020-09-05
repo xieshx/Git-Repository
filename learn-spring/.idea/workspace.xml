@@ -6,7 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f29f7c24-13d1-4915-b412-3a42731c1976" name="Default Changelist" comment="" />
+    <list default="true" id="f29f7c24-13d1-4915-b412-3a42731c1976" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn-spring-01/src/add mytext.txt" beforeDir="false" afterPath="$PROJECT_DIR$/learn-spring-01/src/add mytext.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,6 +90,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1fCvHnVpGMR3ceD8vKhoRRuvIM9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -94,6 +99,7 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -430,11 +436,24 @@
       <workItem from="1599294996298" duration="1147000" />
       <workItem from="1599296164095" duration="352000" />
       <workItem from="1599300271384" duration="11000" />
+      <workItem from="1599300417318" duration="255000" />
     </task>
+    <task id="LOCAL-00001" summary="添加我的文件">
+      <created>1599300612163</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1599300612163</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="添加我的文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加我的文件" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="39" key="#Inspections" timestamp="1595762429357">
@@ -501,6 +520,10 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="356" y="240" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.760@0.0.1280.760" timestamp="1595752490224" />
+    <state x="235" y="0" key="CommitChangelistDialog2" timestamp="1599300611315">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="235" y="0" key="CommitChangelistDialog2/0.0.1280.760@0.0.1280.760" timestamp="1599300611315" />
     <state x="406" y="142" key="FileChooserDialogImpl" timestamp="1599296493316">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
@@ -573,6 +596,10 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="236" y="5" key="SettingsEditor/0.0.1280.760@0.0.1280.760" timestamp="1599296545525" />
+    <state x="233" y="113" key="Vcs.Push.Dialog.v2" timestamp="1599300619584">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="233" y="113" key="Vcs.Push.Dialog.v2/0.0.1280.760@0.0.1280.760" timestamp="1599300619584" />
     <state x="548" y="195" key="chooseDestDirectoryDialog" timestamp="1596166285919">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
