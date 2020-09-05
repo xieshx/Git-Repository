@@ -6,8 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f29f7c24-13d1-4915-b412-3a42731c1976" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="f29f7c24-13d1-4915-b412-3a42731c1976" name="Default Changelist" comment="添加代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/learn-spring-01/src/add mytext.txt" beforeDir="false" afterPath="$PROJECT_DIR$/learn-spring-01/src/add mytext.txt" afterDir="false" />
     </list>
@@ -436,7 +435,7 @@
       <workItem from="1599294996298" duration="1147000" />
       <workItem from="1599296164095" duration="352000" />
       <workItem from="1599300271384" duration="11000" />
-      <workItem from="1599300417318" duration="255000" />
+      <workItem from="1599300417318" duration="426000" />
     </task>
     <task id="LOCAL-00001" summary="添加我的文件">
       <created>1599300612163</created>
@@ -445,7 +444,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599300612163</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="添加代码">
+      <created>1599300707537</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599300707537</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,7 +459,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="添加我的文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加我的文件" />
+    <MESSAGE value="添加代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加代码" />
   </component>
   <component name="WindowStateProjectService">
     <state x="233" y="39" key="#Inspections" timestamp="1595762429357">
@@ -520,10 +527,10 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="356" y="240" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.760@0.0.1280.760" timestamp="1595752490224" />
-    <state x="235" y="0" key="CommitChangelistDialog2" timestamp="1599300611315">
+    <state x="235" y="0" key="CommitChangelistDialog2" timestamp="1599300816161">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state x="235" y="0" key="CommitChangelistDialog2/0.0.1280.760@0.0.1280.760" timestamp="1599300611315" />
+    <state x="235" y="0" key="CommitChangelistDialog2/0.0.1280.760@0.0.1280.760" timestamp="1599300816161" />
     <state x="406" y="142" key="FileChooserDialogImpl" timestamp="1599296493316">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
