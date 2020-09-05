@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/learn-spring-01/learn-spring-01.iml" filepath="$PROJECT_DIR$/learn-spring-01/learn-spring-01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learn-spring-02-DI/learn-spring-02-DI.iml" filepath="$PROJECT_DIR$/learn-spring-02-DI/learn-spring-02-DI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learn-spring-03-annotation/learn-spring-03-annotation.iml" filepath="$PROJECT_DIR$/learn-spring-03-annotation/learn-spring-03-annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learn-spring-04-aop/learn-spring-04-aop.iml" filepath="$PROJECT_DIR$/learn-spring-04-aop/learn-spring-04-aop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learn-spring-05-Integrat_mybatis/learn-spring-05-Integrat_mybatis.iml" filepath="$PROJECT_DIR$/learn-spring-05-Integrat_mybatis/learn-spring-05-Integrat_mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learn-spring-06-goods-annotation/learn-spring-06-goods-annotation.iml" filepath="$PROJECT_DIR$/learn-spring-06-goods-annotation/learn-spring-06-goods-annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learn-spring-07-goods-aspectj/learn-spring-07-goods-aspectj.iml" filepath="$PROJECT_DIR$/learn-spring-07-goods-aspectj/learn-spring-07-goods-aspectj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learn-spring-08-web/learn-spring-08-web.iml" filepath="$PROJECT_DIR$/learn-spring-08-web/learn-spring-08-web.iml" />
+    </modules>
+  </component>
+</project>

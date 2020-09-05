@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--使用name完成注入，并byname自动注入-->
+    <bean id="student1" class="com.neu.ba03.Student" autowire="byName" >
+        <property name="age" value="15"/>
+        <property name="id" value="1004"/>
+        <property name="name" value="刘备"/>
+        <!--<property name="school" ref="school"/>-->
+    </bean>
+
+    <!--使用name完成注入，并byname自动注入-->
+    <bean id="student2" class="com.neu.ba03.Student" autowire="byType" >
+        <property name="age" value="13"/>
+        <property name="id" value="1005"/>
+        <property name="name" value="黄月英 "/>
+        <!--<property name="school" ref="school"/>-->
+    </bean>
+
+
+    <!--声明引用类型-->
+    <bean id="myschool" class="com.neu.ba03.School">
+        <property name="schoolName" value="东南大学"/>
+        <property name="address" value="南京"/>
+    </bean>
+</beans>

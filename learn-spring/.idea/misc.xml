@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/learn-spring-08-web" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../spring_01/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-01/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-02 - DI/pom.xml" />
+        <option value="$PROJECT_DIR$/../learn-annotationDI/pom.xml" />
+        <option value="$PROJECT_DIR$/learn-spring-01/pom.xml" />
+        <option value="$PROJECT_DIR$/learn-spring-02 - DI/pom.xml" />
+        <option value="$PROJECT_DIR$/learn-spring-03-annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/learn-spring-02-DI/pom.xml" />
+        <option value="$PROJECT_DIR$/learn-spring-aop/pom.xml" />
+        <option value="$PROJECT_DIR$/learn-spring-04-aop/pom.xml" />
+        <option value="$PROJECT_DIR$/learn-spring-05-Integrat_mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/learn-spring-goods/pom.xml" />
+        <option value="$PROJECT_DIR$/learn-spring-06-goods-annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/learn-spring-07-goods-aspectj/pom.xml" />
+        <option value="$PROJECT_DIR$/learn-spring-08-web/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
