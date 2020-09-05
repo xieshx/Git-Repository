@@ -58,6 +58,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -458,6 +461,10 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="46" y="28" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.760@0.0.1280.760" timestamp="1596193579662" />
+    <state x="388" y="183" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599300504487">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="388" y="183" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.760@0.0.1280.760" timestamp="1599300504487" />
     <state x="762" y="108" key="#com.intellij.ide.util.MemberChooser" timestamp="1596176244899">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
