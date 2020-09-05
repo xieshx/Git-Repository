@@ -532,10 +532,10 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="356" y="240" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.760@0.0.1280.760" timestamp="1595752490224" />
-    <state x="235" y="0" key="CommitChangelistDialog2" timestamp="1599300816161">
+    <state x="235" y="0" key="CommitChangelistDialog2" timestamp="1599313336452">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state x="235" y="0" key="CommitChangelistDialog2/0.0.1280.760@0.0.1280.760" timestamp="1599300816161" />
+    <state x="235" y="0" key="CommitChangelistDialog2/0.0.1280.760@0.0.1280.760" timestamp="1599313336452" />
     <state x="406" y="142" key="FileChooserDialogImpl" timestamp="1599296493316">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
@@ -628,10 +628,14 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="384" y="217" width="564" height="543" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1280.760@0.0.1280.760" timestamp="1596164223707" />
-    <state x="324" y="204" key="com.intellij.ide.util.TipDialog" timestamp="1599300272288">
+    <state x="324" y="204" key="com.intellij.ide.util.TipDialog" timestamp="1599313289034">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state x="324" y="204" key="com.intellij.ide.util.TipDialog/0.0.1280.760@0.0.1280.760" timestamp="1599300272288" />
+    <state x="324" y="204" key="com.intellij.ide.util.TipDialog/0.0.1280.760@0.0.1280.760" timestamp="1599313289034" />
+    <state x="436" y="297" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599313312987">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="436" y="297" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.760@0.0.1280.760" timestamp="1599313312987" />
     <state x="571" y="167" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1595938382102">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
