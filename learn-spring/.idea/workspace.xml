@@ -6,7 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f29f7c24-13d1-4915-b412-3a42731c1976" name="Default Changelist" comment="文件" />
+    <list default="true" id="f29f7c24-13d1-4915-b412-3a42731c1976" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn-spring-01/target/classes/com/neu/service/ServiceDemo1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn-spring-01/target/classes/com/neu/service/imp/ServiceDemo1Impl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn-spring-01/target/classes/spring-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn-spring-01/target/test-classes/com/neu/SpringTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learn-springboot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../learn-springboot/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learn-springmvc/.idea/dataSources/b3a001e5-e06b-4d20-86de-b595172753fc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../learn-springmvc/.idea/dataSources/b3a001e5-e06b-4d20-86de-b595172753fc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learn-springmvc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../learn-springmvc/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -433,6 +442,9 @@
       <workItem from="1599296164095" duration="352000" />
       <workItem from="1599300271384" duration="11000" />
       <workItem from="1599300417318" duration="544000" />
+      <workItem from="1599313289292" duration="85000" />
+      <workItem from="1599378125324" duration="37000" />
+      <workItem from="1599378194592" duration="18000" />
     </task>
     <task id="LOCAL-00001" summary="添加我的文件">
       <created>1599300612163</created>
@@ -455,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599300866192</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="文件">
+      <created>1599313343880</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1599313343880</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,30 +551,30 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="356" y="240" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.760@0.0.1280.760" timestamp="1595752490224" />
-    <state x="235" y="0" key="CommitChangelistDialog2" timestamp="1599313336452">
+    <state x="235" y="0" key="CommitChangelistDialog2" timestamp="1599313343271">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state x="235" y="0" key="CommitChangelistDialog2/0.0.1280.760@0.0.1280.760" timestamp="1599313336452" />
-    <state x="406" y="142" key="FileChooserDialogImpl" timestamp="1599296493316">
+    <state x="235" y="0" key="CommitChangelistDialog2/0.0.1280.760@0.0.1280.760" timestamp="1599313343271" />
+    <state x="406" y="142" key="FileChooserDialogImpl" timestamp="1599378161361">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state x="406" y="142" key="FileChooserDialogImpl/0.0.1280.760@0.0.1280.760" timestamp="1599296493316" />
-    <state width="1020" height="196" key="GridCell.Tab.0.bottom" timestamp="1596339122483">
+    <state x="406" y="142" key="FileChooserDialogImpl/0.0.1280.760@0.0.1280.760" timestamp="1599378161361" />
+    <state width="1238" height="501" key="GridCell.Tab.0.bottom" timestamp="1599313374287">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1020" height="196" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1596339122483" />
-    <state width="1020" height="196" key="GridCell.Tab.0.center" timestamp="1596339122483">
+    <state width="1238" height="501" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1599313374287" />
+    <state width="1238" height="501" key="GridCell.Tab.0.center" timestamp="1599313374287">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1020" height="196" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1596339122483" />
-    <state width="1020" height="196" key="GridCell.Tab.0.left" timestamp="1596339122483">
+    <state width="1238" height="501" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1599313374287" />
+    <state width="1238" height="501" key="GridCell.Tab.0.left" timestamp="1599313374287">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1020" height="196" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1596339122483" />
-    <state width="1020" height="196" key="GridCell.Tab.0.right" timestamp="1596339122483">
+    <state width="1238" height="501" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1599313374287" />
+    <state width="1238" height="501" key="GridCell.Tab.0.right" timestamp="1599313374287">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1020" height="196" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1596339122483" />
+    <state width="1238" height="501" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1599313374287" />
     <state width="1020" height="196" key="GridCell.Tab.1.bottom" timestamp="1596339122484">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
@@ -604,10 +623,10 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="242" y="79" key="NewModule_or_Project.wizard/0.0.1280.760@0.0.1280.760" timestamp="1596183102178" />
-    <state x="236" y="5" key="SettingsEditor" timestamp="1599296545525">
+    <state x="78" y="46" key="SettingsEditor" timestamp="1599378143795">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state x="236" y="5" key="SettingsEditor/0.0.1280.760@0.0.1280.760" timestamp="1599296545525" />
+    <state x="78" y="46" key="SettingsEditor/0.0.1280.760@0.0.1280.760" timestamp="1599378143795" />
     <state x="233" y="113" key="Vcs.Push.Dialog.v2" timestamp="1599300949213">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
@@ -628,10 +647,10 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="384" y="217" width="564" height="543" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1280.760@0.0.1280.760" timestamp="1596164223707" />
-    <state x="324" y="204" key="com.intellij.ide.util.TipDialog" timestamp="1599313289034">
+    <state x="324" y="204" key="com.intellij.ide.util.TipDialog" timestamp="1599378125402">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state x="324" y="204" key="com.intellij.ide.util.TipDialog/0.0.1280.760@0.0.1280.760" timestamp="1599313289034" />
+    <state x="324" y="204" key="com.intellij.ide.util.TipDialog/0.0.1280.760@0.0.1280.760" timestamp="1599378125402" />
     <state x="436" y="297" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599313312987">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
@@ -652,10 +671,10 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="203" y="122" key="org.sonarlint.intellij.config.global.wizard.SQServerWizard$SonarQubeWizard/0.0.1280.760@0.0.1280.760" timestamp="1599295392400" />
-    <state x="301" y="174" width="672" height="677" key="run.anything.popup" timestamp="1596194660268">
+    <state x="302" y="175" width="672" height="677" key="run.anything.popup" timestamp="1599313359170">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state x="301" y="174" width="672" height="677" key="run.anything.popup/0.0.1280.760@0.0.1280.760" timestamp="1596194660268" />
+    <state x="302" y="175" width="672" height="677" key="run.anything.popup/0.0.1280.760@0.0.1280.760" timestamp="1599313359170" />
     <state x="304" y="83" width="672" height="678" key="search.everywhere.popup" timestamp="1596166220970">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
