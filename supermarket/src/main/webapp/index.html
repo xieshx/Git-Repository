@@ -3,16 +3,30 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>欢迎来到村头小卖部</title>
+		<link rel="stylesheet" href="static/css/bootstrap.min.css"/>
 		<script type="text/javascript" src="static/js/jquery.min.js"></script>
+		<script src="static/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="static/js/index.js"></script>
 	</head>
 	<body>
-		<div>
-			<h2>妖怪，亮出你的身份</h2>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">	
+				</div>
+				<div class="col-md-6">
+					<h2>妖怪，亮出你的身份</h2>
+				</div>
+			</div>			
 		</div>
-		<div>
-			<button id="member_btn">我是顾客</button>
-			<button id="operator_btn">我是管理员</button>
+		<div class="container">		
+			<div class="row">
+				<div class="col-md-6" >
+					<button type="button" class="btn btn-primary btn-lg" id="member_btn">我是顾客</button>
+				</div>
+				<div class="col-md-6">
+					<button type="button" class="btn btn-primary btn-lg" id="operator_btn">我是管理员</button>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

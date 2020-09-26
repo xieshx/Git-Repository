@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neu.dao.MemberMapper">
+  <resultMap id="BaseResultMap" type="com.neu.pojo.Member">
+    <id column="member_id" jdbcType="INTEGER" property="memberId" />
+    <result column="menber_password" jdbcType="VARCHAR" property="menberPassword" />
+    <result column="member_name" jdbcType="VARCHAR" property="memberName" />
+    <result column="member_phone" jdbcType="VARCHAR" property="memberPhone" />
+    <result column="sum_money" jdbcType="DOUBLE" property="sumMoney" />
+    <result column="member_point" jdbcType="INTEGER" property="memberPoint" />
+    <result column="resign_time" jdbcType="TIMESTAMP" property="resignTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    member_id, menber_password, member_name, member_phone, sum_money, member_point, resign_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from member
+    where member_id = #{memberId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from member
+    where member_id = #{memberId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.neu.pojo.Member">
+    insert into member (member_id, menber_password, member_name, 
+      member_phone, sum_money, member_point, 
+      resign_time)
+    values (#{memberId,jdbcType=INTEGER}, #{menberPassword,jdbcType=VARCHAR}, #{memberName,jdbcType=VARCHAR}, 
+      #{memberPhone,jdbcType=VARCHAR}, #{sumMoney,jdbcType=DOUBLE}, #{memberPoint,jdbcType=INTEGER}, 
+      #{resignTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.neu.pojo.Member">
+    insert into member
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="memberId != null">
+        member_id,
+      </if>
+      <if test="menberPassword != null">
+        menber_password,
+      </if>
+      <if test="memberName != null">
+        member_name,
+      </if>
+      <if test="memberPhone != null">
+        member_phone,
+      </if>
+      <if test="sumMoney != null">
+        sum_money,
+      </if>
+      <if test="memberPoint != null">
+        member_point,
+      </if>
+      <if test="resignTime != null">
+        resign_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="memberId != null">
+        #{memberId,jdbcType=INTEGER},
+      </if>
+      <if test="menberPassword != null">
+        #{menberPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="memberName != null">
+        #{memberName,jdbcType=VARCHAR},
+      </if>
+      <if test="memberPhone != null">
+        #{memberPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="sumMoney != null">
+        #{sumMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="memberPoint != null">
+        #{memberPoint,jdbcType=INTEGER},
+      </if>
+      <if test="resignTime != null">
+        #{resignTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.neu.pojo.Member">
+    update member
+    <set>
+      <if test="menberPassword != null">
+        menber_password = #{menberPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="memberName != null">
+        member_name = #{memberName,jdbcType=VARCHAR},
+      </if>
+      <if test="memberPhone != null">
+        member_phone = #{memberPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="sumMoney != null">
+        sum_money = #{sumMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="memberPoint != null">
+        member_point = #{memberPoint,jdbcType=INTEGER},
+      </if>
+      <if test="resignTime != null">
+        resign_time = #{resignTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where member_id = #{memberId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.neu.pojo.Member">
+    update member
+    set menber_password = #{menberPassword,jdbcType=VARCHAR},
+      member_name = #{memberName,jdbcType=VARCHAR},
+      member_phone = #{memberPhone,jdbcType=VARCHAR},
+      sum_money = #{sumMoney,jdbcType=DOUBLE},
+      member_point = #{memberPoint,jdbcType=INTEGER},
+      resign_time = #{resignTime,jdbcType=TIMESTAMP}
+    where member_id = #{memberId,jdbcType=INTEGER}
+  </update>
+</mapper>

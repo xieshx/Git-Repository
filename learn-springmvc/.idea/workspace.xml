@@ -7,13 +7,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24207cd1-eeed-4372-b679-1dc5e91abe33" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../learn-spring/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../learn-spring/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learn-spring/learn-spring-01/target/classes/com/neu/service/ServiceDemo1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learn-spring/learn-spring-01/target/classes/com/neu/service/imp/ServiceDemo1Impl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learn-spring/learn-spring-01/target/classes/spring-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learn-spring/learn-spring-01/target/test-classes/com/neu/SpringTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learn-springboot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../learn-springboot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b3a001e5-e06b-4d20-86de-b595172753fc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b3a001e5-e06b-4d20-86de-b595172753fc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpringMVC-06-SSM/target/test-classes/com/neu/service/impl/StudentServiceImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/controller/MemberController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/MemberMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/MemberMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/OperatorMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/OperatorMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/ProductMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/ProductMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/PurchaseMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/PurchaseMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/SaleRecordMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/SaleRecordMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/pojo/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/pojo/Operator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/pojo/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/pojo/Purchase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/pojo/SaleRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/MemberService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/OperatorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/PurchaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/SaleRecordService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/impl/MemberServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/impl/OperatorServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/impl/PurchaseServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/impl/SaleRecordServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/resources/springmvc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/webapp/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/webapp/memberLogin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/webapp/operatorLogin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/webapp/static/js/memberLogin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/test/java/com/neu/dao/MemberMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/test/java/com/neu/service/MemberServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learn-spring/learn-spring-05-Integrat_mybatis/src/test/java/com/neu/MyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../learn-spring/learn-spring-05-Integrat_mybatis/src/test/java/com/neu/MyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learn-spring/learn-spring-05-Integrat_mybatis/target/test-classes/META-INF/learn-spring-05-Integrat_mybatis.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learn-spring/learn-spring-05-Integrat_mybatis/target/test-classes/com/neu/MyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../learn-spring/learn-spring-05-Integrat_mybatis/target/test-classes/com/neu/MyTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringMVC-06-SSM/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC-06-SSM/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +96,8 @@
         <option value="jsf" />
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -97,16 +136,27 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../learn-spring" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="spring" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
+    <key name="CreateTestDialog.RecentsKey">
       <recent name="com.neu.service.impl" />
+      <recent name="com.neu.controller" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\87560\Desktop\IDEAProject\learn-springmvc\SpringMVC-06-SSM\src\main\webapp" />
+      <recent name="C:\Users\87560\Desktop\IDEAProject\learn-springmvc\SpringMVC-01-hello\src\main\webapp\WEB-INF\views" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\87560\Desktop\IDEAProject\learn-springmvc\SpringMVC-07-exception\src\main\webapp\WEB-INF\views" />
@@ -120,12 +170,27 @@
       <recent name="com.neu.vo" />
       <recent name="com.neu.pojo" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\87560\Desktop\IDEAProject\learn-springmvc\SpringMVC-06-SSM\src\main\webapp" />
-      <recent name="C:\Users\87560\Desktop\IDEAProject\learn-springmvc\SpringMVC-01-hello\src\main\webapp\WEB-INF\views" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.neu.service.impl" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.StudentServiceImplTest.queryStudents">
+    <configuration name="StudentServiceImplTest.queryStudents" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringMVC-06-SSM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.neu.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.neu.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.neu.service.impl.StudentServiceImplTest" />
+      <option name="METHOD_NAME" value="queryStudents" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 8.5.54" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.54" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/SpringMVC_08_Interceptor/" />
       <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
@@ -200,6 +265,11 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.StudentServiceImplTest.queryStudents" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -246,6 +316,13 @@
       <workItem from="1596935169282" duration="8315000" />
       <workItem from="1597026282362" duration="7000" />
       <workItem from="1599378180090" duration="14000" />
+      <workItem from="1599912601579" duration="27000" />
+      <workItem from="1600568093198" duration="385000" />
+      <workItem from="1600569724147" duration="225000" />
+      <workItem from="1600573354468" duration="434000" />
+      <workItem from="1600583960860" duration="499000" />
+      <workItem from="1600600730351" duration="58000" />
+      <workItem from="1600602818981" duration="83000" />
     </task>
     <servers />
   </component>
@@ -281,22 +358,26 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="416" y="136" key="FileChooserDialogImpl/0.0.1280.760@0.0.1280.760" timestamp="1599378192088" />
-    <state width="1238" height="187" key="GridCell.Tab.0.bottom" timestamp="1596944878382">
-      <screen x="0" y="0" width="1280" height="760" />
+    <state width="1663" height="239" key="GridCell.Tab.0.bottom" timestamp="1600569950663">
+      <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state width="1238" height="187" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1596944878382" />
-    <state width="1238" height="187" key="GridCell.Tab.0.center" timestamp="1596944878382">
-      <screen x="0" y="0" width="1280" height="760" />
+    <state width="1663" height="239" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1600569950663" />
+    <state width="1663" height="239" key="GridCell.Tab.0.center" timestamp="1600569950663">
+      <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state width="1238" height="187" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1596944878382" />
-    <state width="1238" height="187" key="GridCell.Tab.0.left" timestamp="1596944878382">
-      <screen x="0" y="0" width="1280" height="760" />
+    <state width="1663" height="239" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1600569950663" />
+    <state width="1663" height="239" key="GridCell.Tab.0.left" timestamp="1600569950663">
+      <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state width="1238" height="187" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1596944878382" />
-    <state width="1238" height="187" key="GridCell.Tab.0.right" timestamp="1596944878382">
-      <screen x="0" y="0" width="1280" height="760" />
+    <state width="1663" height="239" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1600569950663" />
+    <state width="1663" height="239" key="GridCell.Tab.0.right" timestamp="1600569950663">
+      <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state width="1238" height="187" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1596944878382" />
+    <state width="1663" height="239" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1600569950663" />
     <state width="1011" height="226" key="GridCell.Tab.1.bottom" timestamp="1596944878380">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
@@ -349,6 +430,10 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="325" y="392" key="com.intellij.ide.util.TipDialog/0.0.1280.760@0.0.1280.760" timestamp="1597026280839" />
+    <state x="625" y="163" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1600568330339">
+      <screen x="0" y="0" width="1707" height="920" />
+    </state>
+    <state x="625" y="163" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1707.920@0.0.1707.920" timestamp="1600568330339" />
     <state x="0" y="0" key="new project wizard" timestamp="1596791934388">
       <screen x="0" y="0" width="1280" height="760" />
     </state>

@@ -45,7 +45,6 @@ public class MyTest {
 
     @Test
     public void testServiceSelect(){
-
         String config="applicationContext.xml";
         ApplicationContext ac=new  ClassPathXmlApplicationContext(config);
         StudentService studentService = (StudentService) ac.getBean("studentService");

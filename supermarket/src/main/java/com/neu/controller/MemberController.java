@@ -3,6 +3,7 @@ package com.neu.controller;
 import com.neu.pojo.Member;
 import com.neu.service.MemberService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,7 +32,7 @@ public class MemberController {
      * @param id 主键
      * @return 单条数据
      */
-    @GetMapping("/selectOne")
+    @PostMapping("/selectOne")
     public Member selectOne(Integer id) {
         Member member = memberService.queryMemberById(id);
         System.out.println(member);

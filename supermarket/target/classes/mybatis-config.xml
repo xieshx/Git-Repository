@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--settings:控制mybati全局行为-->
+    <settings>
+        <!--打上日志-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <!--设置别名-->
+    <typeAliases>
+        <!--实体类所在包名-->
+        <package name="com.neu.pojo"/>
+    </typeAliases>
+
+    <!--指定Dao文件路径-->
+    <mappers>
+        <!--一次性读取包下所有的mapper.xml文件-->
+        <package name="com.neu.dao"/>
+    </mappers>
+
+</configuration>

@@ -7,14 +7,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f29f7c24-13d1-4915-b412-3a42731c1976" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn-spring-01/target/classes/com/neu/service/ServiceDemo1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn-spring-01/target/classes/com/neu/service/imp/ServiceDemo1Impl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn-spring-01/target/classes/spring-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn-spring-01/target/test-classes/com/neu/SpringTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learn-springboot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../learn-springboot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learn-springmvc/.idea/dataSources/b3a001e5-e06b-4d20-86de-b595172753fc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../learn-springmvc/.idea/dataSources/b3a001e5-e06b-4d20-86de-b595172753fc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../learn-springmvc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../learn-springmvc/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../learn-springmvc/SpringMVC-06-SSM/target/test-classes/com/neu/service/impl/StudentServiceImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/controller/MemberController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/MemberMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/MemberMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/OperatorMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/OperatorMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/ProductMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/ProductMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/PurchaseMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/PurchaseMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/SaleRecordMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/dao/SaleRecordMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/pojo/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/pojo/Operator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/pojo/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/pojo/Purchase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/pojo/SaleRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/MemberService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/OperatorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/PurchaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/SaleRecordService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/impl/MemberServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/impl/OperatorServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/impl/PurchaseServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/java/com/neu/service/impl/SaleRecordServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/test/java/com/neu/dao/MemberMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../supermarket/src/test/java/com/neu/service/MemberServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn-spring-05-Integrat_mybatis/src/test/java/com/neu/MyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/learn-spring-05-Integrat_mybatis/src/test/java/com/neu/MyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn-spring-05-Integrat_mybatis/target/test-classes/META-INF/learn-spring-05-Integrat_mybatis.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn-spring-05-Integrat_mybatis/target/test-classes/com/neu/MyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/learn-spring-05-Integrat_mybatis/target/test-classes/com/neu/MyTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learn-springmvc/SpringMVC-06-SSM/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../learn-springmvc/SpringMVC-06-SSM/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +149,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.23563218" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -162,9 +194,9 @@
       <command value="mvn clean" />
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.mytomcat">
-    <configuration name="MyTest.test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="learn-spring-08-web" />
+  <component name="RunManager" selected="JUnit.MyTest.testServiceSelect">
+    <configuration name="MyTest.test01 (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="learn-spring-05-Integrat_mybatis" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.neu.*" />
@@ -179,8 +211,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyTest.test1 (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="learn-spring-07-goods-aspectj" />
+    <configuration name="MyTest.test01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="learn-spring-08-web" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.neu.*" />
@@ -189,7 +221,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.neu" />
       <option name="MAIN_CLASS_NAME" value="com.neu.MyTest" />
-      <option name="METHOD_NAME" value="test1" />
+      <option name="METHOD_NAME" value="test01" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -365,20 +397,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.MyTest.test1 (1)" />
       <item itemvalue="JUnit.MyTest.testServiceSelect" />
       <item itemvalue="JUnit.MyTest.testServiceSelect (1)" />
       <item itemvalue="JUnit.MyTest.testServiceInsert" />
       <item itemvalue="JUnit.MyTest.test01" />
       <item itemvalue="Tomcat Server.mytomcat" />
+      <item itemvalue="JUnit.MyTest.test01 (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MyTest.testServiceSelect" />
+        <item itemvalue="JUnit.MyTest.test01 (1)" />
         <item itemvalue="JUnit.MyTest.testServiceInsert" />
         <item itemvalue="JUnit.MyTest.test01" />
         <item itemvalue="JUnit.MyTest.testServiceSelect (1)" />
-        <item itemvalue="JUnit.MyTest.testServiceSelect" />
-        <item itemvalue="JUnit.MyTest.test1 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -445,6 +477,12 @@
       <workItem from="1599313289292" duration="85000" />
       <workItem from="1599378125324" duration="37000" />
       <workItem from="1599378194592" duration="18000" />
+      <workItem from="1599880289728" duration="56000" />
+      <workItem from="1599880376791" duration="74000" />
+      <workItem from="1599911877204" duration="720000" />
+      <workItem from="1599912611261" duration="2000" />
+      <workItem from="1600569694008" duration="22000" />
+      <workItem from="1600570107753" duration="1618000" />
     </task>
     <task id="LOCAL-00001" summary="添加我的文件">
       <created>1599300612163</created>
@@ -559,22 +597,26 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="406" y="142" key="FileChooserDialogImpl/0.0.1280.760@0.0.1280.760" timestamp="1599378161361" />
-    <state width="1238" height="501" key="GridCell.Tab.0.bottom" timestamp="1599313374287">
-      <screen x="0" y="0" width="1280" height="760" />
+    <state width="1663" height="629" key="GridCell.Tab.0.bottom" timestamp="1600571740988">
+      <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state width="1238" height="501" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1599313374287" />
-    <state width="1238" height="501" key="GridCell.Tab.0.center" timestamp="1599313374287">
-      <screen x="0" y="0" width="1280" height="760" />
+    <state width="1663" height="629" key="GridCell.Tab.0.bottom/0.0.1707.920@0.0.1707.920" timestamp="1600571740988" />
+    <state width="1663" height="629" key="GridCell.Tab.0.center" timestamp="1600571740988">
+      <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state width="1238" height="501" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1599313374287" />
-    <state width="1238" height="501" key="GridCell.Tab.0.left" timestamp="1599313374287">
-      <screen x="0" y="0" width="1280" height="760" />
+    <state width="1663" height="629" key="GridCell.Tab.0.center/0.0.1707.920@0.0.1707.920" timestamp="1600571740988" />
+    <state width="1663" height="629" key="GridCell.Tab.0.left" timestamp="1600571740988">
+      <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state width="1238" height="501" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1599313374287" />
-    <state width="1238" height="501" key="GridCell.Tab.0.right" timestamp="1599313374287">
-      <screen x="0" y="0" width="1280" height="760" />
+    <state width="1663" height="629" key="GridCell.Tab.0.left/0.0.1707.920@0.0.1707.920" timestamp="1600571740988" />
+    <state width="1663" height="629" key="GridCell.Tab.0.right" timestamp="1600571740988">
+      <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state width="1238" height="501" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1599313374287" />
+    <state width="1663" height="629" key="GridCell.Tab.0.right/0.0.1707.920@0.0.1707.920" timestamp="1600571740988" />
     <state width="1020" height="196" key="GridCell.Tab.1.bottom" timestamp="1596339122484">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
@@ -623,10 +665,11 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="242" y="79" key="NewModule_or_Project.wizard/0.0.1280.760@0.0.1280.760" timestamp="1596183102178" />
-    <state x="78" y="46" key="SettingsEditor" timestamp="1599378143795">
-      <screen x="0" y="0" width="1280" height="760" />
+    <state x="711" y="148" key="SettingsEditor" timestamp="1599912586624">
+      <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="78" y="46" key="SettingsEditor/0.0.1280.760@0.0.1280.760" timestamp="1599378143795" />
+    <state x="711" y="148" key="SettingsEditor/0.0.1707.920@0.0.1707.920" timestamp="1599912586624" />
     <state x="233" y="113" key="Vcs.Push.Dialog.v2" timestamp="1599300949213">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
@@ -647,10 +690,12 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="384" y="217" width="564" height="543" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1280.760@0.0.1280.760" timestamp="1596164223707" />
-    <state x="324" y="204" key="com.intellij.ide.util.TipDialog" timestamp="1599378125402">
-      <screen x="0" y="0" width="1280" height="760" />
+    <state x="432" y="248" key="com.intellij.ide.util.TipDialog" timestamp="1599911932547">
+      <screen x="0" y="0" width="1707" height="920" />
     </state>
+    <state x="324" y="183" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1599880304603" />
     <state x="324" y="204" key="com.intellij.ide.util.TipDialog/0.0.1280.760@0.0.1280.760" timestamp="1599378125402" />
+    <state x="432" y="248" key="com.intellij.ide.util.TipDialog/0.0.1707.920@0.0.1707.920" timestamp="1599911932547" />
     <state x="436" y="297" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599313312987">
       <screen x="0" y="0" width="1280" height="760" />
     </state>

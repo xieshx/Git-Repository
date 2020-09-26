@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neu.dao.PurchaseMapper">
+  <resultMap id="BaseResultMap" type="com.neu.pojo.Purchase">
+    <id column="puchase_id" jdbcType="INTEGER" property="puchaseId" />
+    <result column="product_id" jdbcType="INTEGER" property="productId" />
+    <result column="product_no" jdbcType="INTEGER" property="productNo" />
+    <result column="product_num" jdbcType="INTEGER" property="productNum" />
+    <result column="purchase_price" jdbcType="DOUBLE" property="purchasePrice" />
+    <result column="sum_price" jdbcType="DOUBLE" property="sumPrice" />
+    <result column="provider" jdbcType="VARCHAR" property="provider" />
+    <result column="purchase_time" jdbcType="TIMESTAMP" property="purchaseTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    puchase_id, product_id, product_no, product_num, purchase_price, sum_price, provider, 
+    purchase_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from purchase
+    where puchase_id = #{puchaseId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from purchase
+    where puchase_id = #{puchaseId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.neu.pojo.Purchase">
+    insert into purchase (puchase_id, product_id, product_no, 
+      product_num, purchase_price, sum_price, 
+      provider, purchase_time)
+    values (#{puchaseId,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER}, #{productNo,jdbcType=INTEGER}, 
+      #{productNum,jdbcType=INTEGER}, #{purchasePrice,jdbcType=DOUBLE}, #{sumPrice,jdbcType=DOUBLE}, 
+      #{provider,jdbcType=VARCHAR}, #{purchaseTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.neu.pojo.Purchase">
+    insert into purchase
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="puchaseId != null">
+        puchase_id,
+      </if>
+      <if test="productId != null">
+        product_id,
+      </if>
+      <if test="productNo != null">
+        product_no,
+      </if>
+      <if test="productNum != null">
+        product_num,
+      </if>
+      <if test="purchasePrice != null">
+        purchase_price,
+      </if>
+      <if test="sumPrice != null">
+        sum_price,
+      </if>
+      <if test="provider != null">
+        provider,
+      </if>
+      <if test="purchaseTime != null">
+        purchase_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="puchaseId != null">
+        #{puchaseId,jdbcType=INTEGER},
+      </if>
+      <if test="productId != null">
+        #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="productNo != null">
+        #{productNo,jdbcType=INTEGER},
+      </if>
+      <if test="productNum != null">
+        #{productNum,jdbcType=INTEGER},
+      </if>
+      <if test="purchasePrice != null">
+        #{purchasePrice,jdbcType=DOUBLE},
+      </if>
+      <if test="sumPrice != null">
+        #{sumPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="provider != null">
+        #{provider,jdbcType=VARCHAR},
+      </if>
+      <if test="purchaseTime != null">
+        #{purchaseTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.neu.pojo.Purchase">
+    update purchase
+    <set>
+      <if test="productId != null">
+        product_id = #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="productNo != null">
+        product_no = #{productNo,jdbcType=INTEGER},
+      </if>
+      <if test="productNum != null">
+        product_num = #{productNum,jdbcType=INTEGER},
+      </if>
+      <if test="purchasePrice != null">
+        purchase_price = #{purchasePrice,jdbcType=DOUBLE},
+      </if>
+      <if test="sumPrice != null">
+        sum_price = #{sumPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="provider != null">
+        provider = #{provider,jdbcType=VARCHAR},
+      </if>
+      <if test="purchaseTime != null">
+        purchase_time = #{purchaseTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where puchase_id = #{puchaseId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.neu.pojo.Purchase">
+    update purchase
+    set product_id = #{productId,jdbcType=INTEGER},
+      product_no = #{productNo,jdbcType=INTEGER},
+      product_num = #{productNum,jdbcType=INTEGER},
+      purchase_price = #{purchasePrice,jdbcType=DOUBLE},
+      sum_price = #{sumPrice,jdbcType=DOUBLE},
+      provider = #{provider,jdbcType=VARCHAR},
+      purchase_time = #{purchaseTime,jdbcType=TIMESTAMP}
+    where puchase_id = #{puchaseId,jdbcType=INTEGER}
+  </update>
+</mapper>
