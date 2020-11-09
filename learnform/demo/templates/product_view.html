@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+</head>
+<body>
+    <form action="{% url 'product' %}" method="post">
+        <div>
+            {{ product.product_name.label }}
+            {{ product.product_name }}
+        </div>
+        <div>
+            {{ product.product_group.label }}
+            {{ product.product_group }}
+        </div>
+        <div>
+            <input type="submit" name="提交">
+        </div>
+        <div>
+            {{ errors }}
+        </div>
+    </form>
+</body>
+<script>
+
+</script>
+</html>
