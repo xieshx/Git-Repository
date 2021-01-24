@@ -69,9 +69,24 @@
                 this.$refs.loginForm.validate(
                     (valid) => {
                         if (valid) {
-                            alert("验证成功");
+                            this.$axios.post(
+                                '/login',
+                                {
+                                    username:this.loginForm.username,
+                                    password:this.loginForm.password
+                                }
+                            ).then(successResponse=>{
+                                    if (successResponse.data.code===200){
+                                        this.$router.push({path:"/success"});
+                                    }else {
+                                        this.$router.push({path:"/error"});
+                                    }
+                            }).catch(failResponse=>{
+                                console.log(failResponse);
+                                this.$router.push({path:"/error"});
+                            })
                         } else {
-                            alert("验证失败");
+                            this.$router.push({path:"/error"});
                         }
                     }
                 )
@@ -86,7 +101,7 @@
         left: 0;
         right: 0;
         width: 360px;
-        margin: 100px auto;
+        margin: 150px auto;
         border-radius: 15px;
         box-shadow: 0 0 25px #cac6c6;
     }
