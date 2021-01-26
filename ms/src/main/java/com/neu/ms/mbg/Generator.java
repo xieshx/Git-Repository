@@ -4,48 +4,36 @@ package com.neu.ms.mbg;
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
-import org.mybatis.generator.exception.InvalidConfigurationException;
-import org.mybatis.generator.exception.XMLParserException;
 import org.mybatis.generator.internal.DefaultShellCallback;
 
-import java.io.File;
-import java.io.IOException;
-import java.sql.SQLException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-//获取到配置文件并解析,都是固定代码,copy即可
+/**
+ * 用于生产MBG的代码
+ * Created by macro on 2018/4/26.
+ */
 public class Generator {
-    public static void main(String[] args) {
-        List<String> warings = new ArrayList<String>();
+    public static void main(String[] args) throws Exception {
+        //MBG 执行过程中的警告信息
+        List<String> warnings = new ArrayList<String>();
+        //当生成的代码重复时，覆盖原代码
         boolean overwrite = true;
-        File configFile = new File("D:/Git Repository/ms/target/classes/generatorConfig.xml");
-        ConfigurationParser configurationParser = new
-                ConfigurationParser(warings);
-        Configuration configuration = null;
-        try {
-            configuration = configurationParser.parseConfiguration(configFile);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (XMLParserException e) {
-            e.printStackTrace();
-        }
+        //读取我们的 MBG 配置文件
+        InputStream is = Generator.class.getResourceAsStream("/generatorConfig.xml");
+        ConfigurationParser cp = new ConfigurationParser(warnings);
+        Configuration config = cp.parseConfiguration(is);
+        is.close();
+
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);
-        MyBatisGenerator myBatisGenerator = null;
-        try {
-            myBatisGenerator = new
-                    MyBatisGenerator(configuration, callback, warings);
-        } catch (InvalidConfigurationException e) {
-            e.printStackTrace();
-        }
-        try {
-            myBatisGenerator.generate(null);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        //创建 MBG
+        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
+        //执行生成代码
+        myBatisGenerator.generate(null);
+        //输出警告信息
+        for (String warning : warnings) {
+            System.out.println(warning);
         }
     }
 }
