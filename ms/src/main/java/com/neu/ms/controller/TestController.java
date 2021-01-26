@@ -17,7 +17,7 @@ public class TestController {
     @RequestMapping("/hello")
     public String index(Model model) {
         model.addAttribute("name", "thymeleaf");
-        MsAdmin msAdmin = msAdminMapper.selectByPrimaryKey(1);
+        msAdminMapper.selectByPrimaryKey(1);
         return "hello";
     }
 }

@@ -5,6 +5,8 @@
 <generatorConfiguration>
     <properties resource="generator.properties"/>
     <context id="testTables" targetRuntime="MyBatis3" defaultModelType="flat">
+        <!--生成mapper.xml时覆盖原文件-->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
         <!-- 1、jdbcConnection 配置数据库连接信息。-->
         <jdbcConnection
                 driverClass="${jdbc.driverClass}"
