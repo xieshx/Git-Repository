@@ -3,6 +3,7 @@
         <el-card class="login-form-layout">
             <!--:rules="rules"为表单提供验证规则，status-icon校验结果反馈图标-->
             <!--也可以直接把校验规则写在元素标签里:rules="[{校验规则}]"-->
+            <!--ref="loginForm"，之后就可以使用this.$refs访问到这个表单的子元素-->
             <!--TODO:(:inline="true")把表单域变成行，让账户和密码及其输入框并排（待确认，与官方文档有异）-->
             <el-form  :inline="true" :model="loginForm" status-icon :rules="rules" ref="loginForm">
                 <h2 class="login-title">系统登录</h2>
@@ -70,6 +71,7 @@
         //注意是methods而不是method
         methods: {
             login() {
+                //也可以用this.$refs['loginForm']
                 this.$refs.loginForm.validate(
                     (valid) => {
                         if (valid) {
@@ -85,7 +87,8 @@
                                     if (successResponse.data.code===200){
                                         this.$router.push({path:"/success"});
                                     }else {
-                                        this.$router.push({path:"/error"});
+                                        this.$refs.loginForm.resetFields();
+                                        this.$message.error(successResponse.data.message);
                                     }
                             }).catch(failResponse=>{
                                 this.loading=false;

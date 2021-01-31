@@ -1,14 +1,14 @@
 package com.neu.ms.controller;
 
 import com.neu.ms.common.CommonResult;
-import com.neu.ms.mbg.model.MsAdmin;
 import com.neu.ms.service.AdminService;
 import com.neu.ms.vo.User;
-import com.neu.ms.vo.Result;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 // 这里要用@RestController(=@Controller + @ResponseBody)
 // @Controller是用来响应页面的，必须配合模板引擎来使用，返回一个view(MVC中的V)

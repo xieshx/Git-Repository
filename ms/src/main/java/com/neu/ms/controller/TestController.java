@@ -1,8 +1,6 @@
 package com.neu.ms.controller;
 
 import com.neu.ms.mbg.mapper.MsAdminMapper;
-import com.neu.ms.mbg.model.MsAdmin;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
