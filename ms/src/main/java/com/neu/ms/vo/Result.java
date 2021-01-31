@@ -1,4 +1,4 @@
-package com.neu.ms.dto;
+package com.neu.ms.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

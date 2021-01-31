@@ -3,7 +3,7 @@
         <el-card class="login-form-layout">
             <!--:rules="rules"为表单提供验证规则，status-icon校验结果反馈图标-->
             <!--也可以直接把校验规则写在元素标签里:rules="[{校验规则}]"-->
-            <!--:inline="true"把表单域变成行，让账户和密码及其输入框并排（待确认，与官方文档有异）-->
+            <!--TODO:(:inline="true")把表单域变成行，让账户和密码及其输入框并排（待确认，与官方文档有异）-->
             <el-form  :inline="true" :model="loginForm" status-icon :rules="rules" ref="loginForm">
                 <h2 class="login-title">系统登录</h2>
                 <!--prop用于表示需要验证的字段-->
@@ -17,7 +17,8 @@
                 <el-form-item>
                     <!--@click等价于v-on:click-->
                     <!--@click.native.prevent用于阻止默认事件-->
-                    <el-button type="primary" @click.native.prevent="login">登录</el-button>
+                    <!--:loading="loading"按钮加载效果-->
+                    <el-button type="primary" :loading="loading" @click.native.prevent="login">登录</el-button>
                 </el-form-item>
             </el-form>
         </el-card>
@@ -45,6 +46,9 @@
             };
 
             return {
+                //按钮加载状态
+                loading: false,
+                //表单数据
                 loginForm: {
                     username: '',
                     password: ''
@@ -69,6 +73,7 @@
                 this.$refs.loginForm.validate(
                     (valid) => {
                         if (valid) {
+                            this.loading=true;
                             this.$axios.post(
                                 '/login',
                                 {
@@ -76,12 +81,14 @@
                                     password:this.loginForm.password
                                 }
                             ).then(successResponse=>{
+                                    this.loading=false;
                                     if (successResponse.data.code===200){
                                         this.$router.push({path:"/success"});
                                     }else {
                                         this.$router.push({path:"/error"});
                                     }
                             }).catch(failResponse=>{
+                                this.loading=false;
                                 console.log(failResponse);
                                 this.$router.push({path:"/error"});
                             })

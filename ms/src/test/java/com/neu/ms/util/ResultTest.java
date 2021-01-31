@@ -1,6 +1,6 @@
 package com.neu.ms.util;
 
-import com.neu.ms.dto.Result;
+import com.neu.ms.vo.Result;
 import org.junit.jupiter.api.Test;
 
 class ResultTest {
