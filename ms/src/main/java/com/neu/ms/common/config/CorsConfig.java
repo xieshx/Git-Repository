@@ -1,4 +1,4 @@
-package com.neu.ms.config;
+package com.neu.ms.common.config;
 
 
 import org.springframework.context.annotation.Bean;

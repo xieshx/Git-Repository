@@ -1,4 +1,4 @@
-package com.neu.ms.common;
+package com.neu.ms.common.api;
 
 /**
  * 设置通用返回对象

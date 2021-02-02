@@ -1,4 +1,4 @@
-package com.neu.ms.common;
+package com.neu.ms.common.api;
 
 public interface IErrorCode {
     long getCode();

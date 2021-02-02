@@ -1,6 +1,6 @@
 package com.neu.ms.controller;
 
-import com.neu.ms.common.CommonResult;
+import com.neu.ms.common.api.CommonResult;
 import com.neu.ms.service.AdminService;
 import com.neu.ms.vo.User;
 import org.springframework.web.bind.annotation.RequestBody;

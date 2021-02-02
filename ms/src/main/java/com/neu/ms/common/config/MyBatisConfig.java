@@ -1,4 +1,4 @@
-package com.neu.ms.config;
+package com.neu.ms.common.config;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;

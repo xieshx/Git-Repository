@@ -1,4 +1,4 @@
-package com.neu.ms.common;
+package com.neu.ms.common.api;
 
 public enum ResultCode implements IErrorCode {
     SUCCESS(200, "操作成功"),
