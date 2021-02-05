@@ -1,8 +1,8 @@
 package com.neu.ms.controller;
 
 import com.neu.ms.common.api.CommonResult;
+import com.neu.ms.dto.AdminLoginParam;
 import com.neu.ms.service.AdminService;
-import com.neu.ms.vo.User;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,14 +21,14 @@ import javax.annotation.Resource;
 // 现在已经实现全局跨域，配置在config.CorsConfig下
 public class LoginController {
     @Resource
-    AdminService adminService;
+    private AdminService adminService;
     // 也可以用PostMapping("/login")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     // post请求，参数接收需要添加注解@RequsetBody用来接收contentType为application/json的传入对象，
     // @RequestParam用来获取查询参数，形式get请求的url?name=
     // json数据会自动转换成对象，即User
-    public CommonResult login(@RequestBody User user) {
-        if (adminService.checkAdminPassword(user)) {
+    public CommonResult login(@RequestBody AdminLoginParam adminLoginParam) {
+        if (adminService.checkAdminPassword(adminLoginParam)) {
             return  CommonResult.success(null);
         } else {
             return CommonResult.validateFailed("用户名或密码错误");

@@ -14,7 +14,8 @@ class MsApplicationTests {
 
     @Test
     void contextLoads() {
-        String token = jwtTokenUtil.generateToken();
+        // String token = jwtTokenUtil.generateToken();
+        // jwtTokenUtil.getUserNameFromToken(token);
     }
 
 }

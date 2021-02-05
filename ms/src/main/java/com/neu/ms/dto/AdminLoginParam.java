@@ -1,13 +1,12 @@
-package com.neu.ms.vo;
+package com.neu.ms.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class User {
+public class AdminLoginParam {
     int id;
     String username;
     String password;
-    Integer lever;
 }

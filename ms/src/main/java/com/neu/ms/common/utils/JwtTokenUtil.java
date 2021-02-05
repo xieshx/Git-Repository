@@ -4,6 +4,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -14,8 +15,8 @@ import java.util.Map;
 //一、头部分是一个描述JWT元数据的JSON对象，包含两个属性：
 //      1.alg：签名使用的算法，默认为HMAC SHA256（写为HS256）
 //      2.typ：令牌的类型，JWT令牌统一写为JWT
-//二、有效载荷是JWT的主体内容部分，也是一个JSON对象，包含需要传递的数据。JWT指定七个默认字段供选择
-//      iss发行人;exp到期时间;sup主题;aud用户;nbf在此之前不可用;iat发行时间;jti是JWT的识别唯一ID
+//二、有效载荷是JWT的主体内容部分，也是一个JSON对象，包含需要传递的数据。JWT指定七个默认字段供选择，也可以自定义放到claims中去
+//      iss发行人;exp到期时间;sub主题;aud用户;nbf在此之前不可用;iat发行时间;jti是JWT的识别唯一ID
 //三、签名是对上面两部分数据签名，通过指定的算法生成哈希，以确保数据不会被篡改。
 // 首先，需要制定一个密钥（secret）。该密钥仅仅为保存在服务器中，并且不能向用户公开。
 // 然后，使用头部中指定的签名算法（默认情况下为HMACSHA256）根据以下公式生成签名:
@@ -40,8 +41,10 @@ public class JwtTokenUtil {
     private Long expiration;
 
     // 获取用户生成token
-    public String generateToken(){
+    //与security结合
+    public String generateToken(UserDetails userDetails){
         //创建payload的私有声明（根据特定的业务需要添加，如果要拿这个做验证，一般是需要和jwt的接收方提前沟通好验证方式的）
+        //当前项目使用：用户名、创建时间、生成时间
         Map<String,Object> claims=new HashMap<>();
         claims.put(CLAIM_KEY_USERNAME,"root");
         claims.put(CLAIM_KEY_CREATED,new Date());
@@ -61,6 +64,16 @@ public class JwtTokenUtil {
         }
         return username;
     }
+
+    /**
+     * 从token中获取过期时间
+     */
+    public Date getExpiredDateFromToken(String token) {
+        Claims claims = getClaimsFromToken(token);
+        return claims.getExpiration();
+    }
+
+    //TODO:刷新token功能
 
     //私有方法，生成token
     private String generateToken(Map<String,Object> claims){
@@ -84,6 +97,7 @@ public class JwtTokenUtil {
     }
 
     //私有方法,从token中获取JWT中的负载
+    //JWT有效载荷的一个属性对被成为一个claims，Claims类继承了Map，但是是个接口，自己是没办法new出来使用的
     private Claims getClaimsFromToken(String token) {
         Claims claims = null;
         try {
