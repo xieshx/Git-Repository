@@ -19,6 +19,12 @@ jwt:
   secret: ms-admin-secret #JWT加解密使用的密钥
   expiration: 604800 #JWT的超期限时间(60*60*24*7)
 
+#  路径解析：
+#    /**:所有路径，及其下子路径
+#    /*:所有路径，不包括子路径
+#    /:web项目的根目录
+#    classpath:只会在class路径中查找文件
+#    classpath*:会在jar文件中查找，同时也会在class路径下查找
 mybatis:
   mapper-locations:
     - classpath:mapper/*.xml
