@@ -16,6 +16,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.annotation.Resource;
 
@@ -31,7 +32,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Resource
     private CustomizeAuthenticationEntryPoint customizeAuthenticationEntryPoint;
 
-    ////http相关的配置，包括登入登出、异常处理、会话管理等
+
+    //http相关的配置，包括登入登出、异常处理、会话管理等
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -61,16 +63,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     //配置认证规则，加入UserDetailsService和密码编码器
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService()).passwordEncoder(new BCryptPasswordEncoder());
+        auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
+    }
+
+    //创建密码编译器，注入容器中
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
     //获取用户登录信息
     //用UserDetailsService的方法去加载自定义的UserDetails
     @Bean
-    public UserDetailsService userDetailsService(){
+    public UserDetailsService userDetailsService() {
         return username -> {
             MsAdmin admin = adminService.getAdminByUsername(username);
-            if (admin!=null){
+            if (admin != null) {
                 return new AdminUserDetails(admin);
             }
             throw new UsernameNotFoundException("用户名或密码错误！");

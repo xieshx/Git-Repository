@@ -114,6 +114,14 @@
             <version>2.7.0</version>
         </dependency>
 
+        <!--导入javax包，解决Xml数据转换异常-->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

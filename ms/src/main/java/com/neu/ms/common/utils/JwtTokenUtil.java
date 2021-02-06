@@ -42,12 +42,12 @@ public class JwtTokenUtil {
 
     // 获取用户生成token
     //与security结合
-    public String generateToken(UserDetails userDetails){
+    public String generateToken(UserDetails userDetails) {
         //创建payload的私有声明（根据特定的业务需要添加，如果要拿这个做验证，一般是需要和jwt的接收方提前沟通好验证方式的）
         //当前项目使用：用户名、创建时间、生成时间
-        Map<String,Object> claims=new HashMap<>();
-        claims.put(CLAIM_KEY_USERNAME,"root");
-        claims.put(CLAIM_KEY_CREATED,new Date());
+        Map<String, Object> claims = new HashMap<>();
+        claims.put(CLAIM_KEY_USERNAME, userDetails.getUsername());
+        claims.put(CLAIM_KEY_CREATED, new Date());
         return generateToken(claims);
     }
 
@@ -58,7 +58,7 @@ public class JwtTokenUtil {
         String username;
         try {
             Claims claims = getClaimsFromToken(token);
-            username =  claims.getSubject();
+            username = claims.getSubject();
         } catch (Exception e) {
             username = null;
         }
@@ -76,7 +76,7 @@ public class JwtTokenUtil {
     //TODO:刷新token功能
 
     //私有方法，生成token
-    private String generateToken(Map<String,Object> claims){
+    private String generateToken(Map<String, Object> claims) {
         return Jwts.builder()
                 .setClaims(claims)
                 //设置过期时间
@@ -84,7 +84,10 @@ public class JwtTokenUtil {
                 // signWith解析：
                 // 第一个参数是签名算法
                 // 第二个参数是生成签名的时候使用的秘钥secret,这个方法本地封装了的，一般可以从本地配置文件中读取，切记这个秘钥不能外露。
-                // 它就是你服务端的私钥，在任何场景都不应该流露出去。一旦客户端得知这个secret, 那就意味着客户端是可以自我签发jwt了。
+                // 它就是服务端的私钥，在任何场景都不应该流露出去。一旦客户端得知这个secret, 那就意味着客户端是可以自我签发jwt了。
+                // 这里报了个javax的异常，因为JAXB API是java EE 的API，因此在java SE 9.0 中不再包含这个 Jar 包。
+                // java 9 中引入了模块的概念，默认情况下，Java SE中将不再包含java EE 的Jar包
+                // 解决办法：可以降低JDK8，也可以导入对应的jar包
                 .signWith(SignatureAlgorithm.HS512, secret)
                 //加密为jwt
                 .compact();

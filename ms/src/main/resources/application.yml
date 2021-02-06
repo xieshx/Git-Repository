@@ -18,6 +18,8 @@ server:
 jwt:
   secret: ms-admin-secret #JWT加解密使用的密钥
   expiration: 604800 #JWT的超期限时间(60*60*24*7)
+  tokenHeader: Authorization #将token放入到HTTP请求头的Authorization中
+  tokenHead: 'Bearer '  #JWT负载中拿到开头
 
 #  路径解析：
 #    /**:所有路径，及其下子路径

@@ -3,6 +3,7 @@ package com.neu.ms;
 import com.neu.ms.common.utils.JwtTokenUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.annotation.Resource;
 
@@ -12,10 +13,21 @@ class MsApplicationTests {
     @Resource
     JwtTokenUtil jwtTokenUtil;
 
+    @Resource
+    private PasswordEncoder passwordEncoder;
+
     @Test
-    void contextLoads() {
+    public void contextLoads() {
         // String token = jwtTokenUtil.generateToken();
         // jwtTokenUtil.getUserNameFromToken(token);
+
     }
+
+    @Test
+    public void setPasswordEncoder(){
+        String s = passwordEncoder.encode("123");
+    }
+
+
 
 }

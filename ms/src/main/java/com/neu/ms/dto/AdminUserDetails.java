@@ -61,6 +61,6 @@ public class AdminUserDetails implements UserDetails {
     //账户是否可用
     @Override
     public boolean isEnabled() {
-        return true;
+        return admin.getStatus();
     }
 }

@@ -3,12 +3,15 @@ package com.neu.ms.controller;
 import com.neu.ms.common.api.CommonResult;
 import com.neu.ms.dto.AdminLoginParam;
 import com.neu.ms.service.AdminService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 // 这里要用@RestController(=@Controller + @ResponseBody)
 // @Controller是用来响应页面的，必须配合模板引擎来使用，返回一个view(MVC中的V)
@@ -22,16 +25,25 @@ import javax.annotation.Resource;
 public class LoginController {
     @Resource
     private AdminService adminService;
+    @Value("${jwt.tokenHeader}")
+    private String tokenHeader;
+    @Value("${jwt.tokenHead}")
+    private String tokenHead;
+
     // 也可以用PostMapping("/login")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     // post请求，参数接收需要添加注解@RequsetBody用来接收contentType为application/json的传入对象，
     // @RequestParam用来获取查询参数，形式get请求的url?name=
     // json数据会自动转换成对象，即User
     public CommonResult login(@RequestBody AdminLoginParam adminLoginParam) {
-        if (adminService.checkAdminPassword(adminLoginParam)) {
-            return  CommonResult.success(null);
-        } else {
+        String token = adminService.login(adminLoginParam);
+        if (token == null) {
             return CommonResult.validateFailed("用户名或密码错误");
         }
+        Map<String, String> tokenMap = new HashMap<>();
+        tokenMap.put("token", token);
+        //TODO:tokenHead是什么作用？
+        tokenMap.put("tokenHead", tokenHead);
+        return CommonResult.success(tokenMap);
     }
 }
