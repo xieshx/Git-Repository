@@ -1,5 +1,5 @@
 # Git-Repository
-入门springboot+vue
+根据mall进行入门springboot+vue
 
 个人学习笔记
 
