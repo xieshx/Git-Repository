@@ -6,6 +6,8 @@ import com.neu.ms.mbg.mapper.MsAdminMapper;
 import com.neu.ms.mbg.model.MsAdmin;
 import com.neu.ms.mbg.model.MsAdminExample;
 import com.neu.ms.service.AdminService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,6 +19,8 @@ import java.util.List;
 
 @Service
 public class AdminServiceImpl implements AdminService {
+    // 日志记录器
+    private static final Logger LOGGER = LoggerFactory.getLogger(AdminServiceImpl.class);
 
     @Resource
     private MsAdminMapper msAdminMapper;
@@ -46,10 +50,13 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public String login(AdminLoginParam adminLoginParam) {
         String token = null;
+        // 这一步会进入到自己重写的UserDetailsService，在SpringSecurity中用lambda实现
         UserDetails userDetails = userDetailsService.loadUserByUsername(adminLoginParam.getUsername());
-        //passwordEncoder.matches(明文,密文)
-        //TODO:异常日志功能
+        // passwordEncoder.matches(明文,密文)
+        // TODO:异常日志功能
         if (!passwordEncoder.matches(adminLoginParam.getPassword(), userDetails.getPassword())) {
+            LOGGER.warn("登录异常:{}","密码错误");
+            // 运行时异常
             throw new BadCredentialsException("密码不正确");
         }
         token = jwtTokenUtil.generateToken(userDetails);

@@ -37,9 +37,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                //关闭csrf
+                // 关闭csrf
+                // 在Security的默认拦截器里，默认会开启CSRF处理，判断请求post是否携带了token，如果没有就拒绝访问（403、401）。
+                // 在请求为(GET|HEAD|TRACE|OPTIONS)时，不会开启CSRF处理，
                 .csrf().disable()
-                //关闭HttpSession（STATELESS）
+                //关闭HttpSession（STATELESS），设置为无状态连接
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 //请求授权
@@ -51,8 +53,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //其他请求需要认证
                 .anyRequest().authenticated();
 
-        //关闭缓存
+        //关闭页面缓存
         http.headers().cacheControl();
+
+        // TODO:配置自定义的验证过滤器
+        // http.addFilterBefore();
 
         //添加自定义未授权和未登录结果返回
         http.exceptionHandling()
@@ -89,7 +94,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         //放行所有请求，相当于security功能
         // web.ignoring().antMatchers("/**");
-        //放行swagger
+        //TODO:放行swagger，将路径都加入到配置文件的白名单当中
         web.ignoring().antMatchers(HttpMethod.GET,
                 "/v2/api-docs",
                 "/swagger-resources",
