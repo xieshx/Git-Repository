@@ -42,7 +42,7 @@ public class LoginController {
         }
         Map<String, String> tokenMap = new HashMap<>();
         tokenMap.put("token", token);
-        //TODO:tokenHead是什么作用？
+        // TODO:tokenHead是什么作用？
         tokenMap.put("tokenHead", tokenHead);
         return CommonResult.success(tokenMap);
     }

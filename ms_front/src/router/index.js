@@ -4,9 +4,10 @@ import VueRouter from "vue-router"//引入 Vue 路由
 Vue.use(VueRouter)//安装VueRouter插件
 
 const constantRouterMap = [
-    {path: '/', component: () => import('@/views/login')},
+    {path: '/', component: () => import('@/views/login/index')},
     {path: '/success', component: () => import('@/views/success')},
-    {path: '/error', component: () => import('@/views/error')}
+    {path: '/error', component: () => import('@/views/error')},
+    {path:'/home',component: ()=>import('@/views/home/index')}
 ]
 
 //1.URL上的#号的特性（即改变 URL 却不请求后端），就可以在前端实现页面的整体变化，而不用每次都去请求后端，

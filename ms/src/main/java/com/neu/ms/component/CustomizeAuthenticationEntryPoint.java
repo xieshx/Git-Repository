@@ -19,6 +19,15 @@ import java.io.IOException;
  */
 @Component
 public class CustomizeAuthenticationEntryPoint implements AuthenticationEntryPoint {
+
+    // AuthenticationException常见子类如下：
+    // 一、AccountStatusException用户状态异常它包含如下子类：
+    //      1.AccountExpiredException（账户过期）
+    //      2.LockedException（账户锁定）
+    //      3.DisabledException（账户不可用）
+    //      4.CredentialsExpiredException（证书过期）
+    // 二、UsernameNotFoundException
+    // 三、BadCredentialsException
     @Override
     public void commence(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
         httpServletResponse.setCharacterEncoding("UTF-8");

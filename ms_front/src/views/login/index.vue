@@ -1,11 +1,12 @@
 <template>
+    <!--VUE只允许有一个根元素，外部用一个div来包装-->
     <div>
         <el-card class="login-form-layout">
             <!--:rules="rules"为表单提供验证规则，status-icon校验结果反馈图标-->
             <!--也可以直接把校验规则写在元素标签里:rules="[{校验规则}]"-->
             <!--ref="loginForm"，之后就可以使用this.$refs访问到这个表单的子元素-->
             <!--TODO:(:inline="true")把表单域变成行，让账户和密码及其输入框并排（待确认，与官方文档有异）-->
-            <el-form  :inline="true" :model="loginForm" status-icon :rules="rules" ref="loginForm">
+            <el-form :inline="true" :model="loginForm" status-icon :rules="rules" ref="loginForm">
                 <h2 class="login-title">系统登录</h2>
                 <!--prop用于表示需要验证的字段-->
                 <!--TODO:去掉Label，换成账号密码图标放在输入栏中-->
@@ -19,7 +20,7 @@
                     <!--@click等价于v-on:click-->
                     <!--@click.native.prevent用于阻止默认事件-->
                     <!--:loading="loading"按钮加载效果-->
-                    <el-button type="primary" :loading="loading" @click.native.prevent="login">登录</el-button>
+                    <el-button type="primary" :loading="loading" @click.native.prevent="index">登录</el-button>
                 </el-form-item>
             </el-form>
         </el-card>
@@ -60,10 +61,12 @@
                         //trigger:触发验证的时机
                         //blur:输入框失去焦点时
                         //change:数据改变时
-                        {validator: checkUsername, trigger: ['blur','change']}
+                        {validator: checkUsername, trigger: 'change'},
+                        {min: 3, max: 10, message: '用户名长度在 3 到 10 个字符', trigger: 'change'}
                     ],
                     password: [
-                        {validator: checkPassword, trigger: ['blur','change']}
+                        {validator: checkPassword, trigger: 'change'},
+                        {min: 6, max: 18, message: '密码长度在 6 到 18 个字符', trigger: 'change'}
                     ]
                 }
             }
@@ -73,30 +76,33 @@
             login() {
                 //也可以用this.$refs['loginForm']
                 this.$refs.loginForm.validate(
+                    // 箭头函数的=>就是return的意思
                     (valid) => {
                         if (valid) {
-                            this.loading=true;
+                            this.loading = true;
                             this.$axios.post(
                                 '/login',
                                 {
-                                    username:this.loginForm.username,
-                                    password:this.loginForm.password
+                                    username: this.loginForm.username,
+                                    password: this.loginForm.password
                                 }
-                            ).then(successResponse=>{
-                                    this.loading=false;
-                                    if (successResponse.data.code===200){
-                                        this.$router.push({path:"/success"});
-                                    }else {
-                                        this.$refs.loginForm.resetFields();
-                                        this.$message.error(successResponse.data.message);
-                                    }
-                            }).catch(failResponse=>{
-                                this.loading=false;
+                            ).then(successResponse => {
+                                this.loading = false;
+                                if (successResponse.data.code === 200) {
+                                    this.$router.push({path: "/success"});
+                                } else {
+                                    this.$refs.loginForm.resetFields();
+                                    this.$message.error(successResponse.data.data);
+                                }
+                            }).catch(failResponse => {
+                                this.loading = false;
                                 console.log(failResponse);
-                                this.$router.push({path:"/error"});
+                                this.$router.push({path: "/error"});
                             })
                         } else {
-                            this.$router.push({path:"/error"});
+                            console.log('参数验证不合法！');
+                            // TODO:return false这有啥用
+                            return false;
                         }
                     }
                 )
