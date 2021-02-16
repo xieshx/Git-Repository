@@ -20,7 +20,7 @@
                     <!--@click等价于v-on:click-->
                     <!--@click.native.prevent用于阻止默认事件-->
                     <!--:loading="loading"按钮加载效果-->
-                    <el-button type="primary" :loading="loading" @click.native.prevent="index">登录</el-button>
+                    <el-button type="primary" :loading="loading" @click.native.prevent="login">登录</el-button>
                 </el-form-item>
             </el-form>
         </el-card>
@@ -29,6 +29,7 @@
 
 <script>
     export default {
+        name: "login",
         //下面写法等同于data:function(){ return ...}
         data() {
             //自定义的校验规则
@@ -66,38 +67,38 @@
                     ],
                     password: [
                         {validator: checkPassword, trigger: 'change'},
-                        {min: 6, max: 18, message: '密码长度在 6 到 18 个字符', trigger: 'change'}
+                        {min: 3, max: 18, message: '密码长度在 3 到 18 个字符', trigger: 'change'}
                     ]
                 }
             }
         },
+
         //注意是methods而不是method
         methods: {
             login() {
+
                 //也可以用this.$refs['loginForm']
                 this.$refs.loginForm.validate(
-                    // 箭头函数的=>就是return的意思
+
+                    // 箭头函数
+                    // 1、()=>{}，里面必须加return语句才能返回值
+                    // 2、()=>()，将括号内的结果直接返回，不用写return
+                    // 3、()=>  ，没有括号的情况与2一致
                     (valid) => {
                         if (valid) {
+                            // 箭头函数中是没有this的，这个this是继承而来的
                             this.loading = true;
-                            this.$axios.post(
-                                '/login',
-                                {
-                                    username: this.loginForm.username,
-                                    password: this.loginForm.password
-                                }
-                            ).then(successResponse => {
+                            // dispatch(方法名，参数)
+                            // store.dispatch可以处理被触发的action的处理函数返回的Promise，并且store.dispatch仍旧返回 Promise
+                            // .then()就是当前面的方法执行完后再执行then()内部的程序，这样就避免了，数据没获取到等的问题
+                            this.$store.dispatch('Login', this.loginForm).then(() => {
                                 this.loading = false;
-                                if (successResponse.data.code === 200) {
-                                    this.$router.push({path: "/success"});
-                                } else {
-                                    this.$refs.loginForm.resetFields();
-                                    this.$message.error(successResponse.data.data);
-                                }
-                            }).catch(failResponse => {
+                                // setCookie("username",this.loginForm.username,15);
+                                // setCookie("password",this.loginForm.password,15);
+                                this.$router.push({path: '/home'})
+                            }).catch(() => {
                                 this.loading = false;
-                                console.log(failResponse);
-                                this.$router.push({path: "/error"});
+                                this.$refs.loginForm.resetFields();
                             })
                         } else {
                             console.log('参数验证不合法！');
