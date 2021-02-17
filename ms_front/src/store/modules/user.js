@@ -1,5 +1,5 @@
-import {login} from "@/api/login";
-import {setToken, getToken, removeToken} from '@/utils/auth';
+import {login, logout} from "@/api/login";
+import {getToken, removeToken, setToken} from '@/utils/auth';
 
 const user = {
 
@@ -39,7 +39,7 @@ const user = {
             })
         },
 
-        LogOut({ commit }) {
+        LogOut({commit, state}) {
             return new Promise((resolve, reject) => {
                 logout(state.token).then(() => {
                     commit('SET_TOKEN', '');
