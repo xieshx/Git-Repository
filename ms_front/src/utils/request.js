@@ -5,7 +5,7 @@ import {getToken} from '@/utils/auth'
 
 // 自定义创建的axios实例
 const service = axios.create({
-    baseURL: process.env.BASE_API, // api的base_url
+    baseURL: 'http://localhost:8088', // 向后端请求的地址
     timeout: 15000 // 请求超时时间
 });
 
@@ -45,8 +45,10 @@ service.interceptors.response.use(
                     cancelButtonText: '取消',
                     type: 'warning'
                 }).then(() => {
+                    // 登出操作，清空cookie和store中的token
                     store.dispatch('FedLogOut').then(() => {
-                        location.reload()// 为了重新实例化vue-router对象 避免bug
+                        // 刷新当前页面，为了重新实例化vue-router对象 避免bug
+                        location.reload()
                     })
                 })
             }
@@ -56,7 +58,7 @@ service.interceptors.response.use(
         }
     },
     error => {
-        console.log('err' + error);// for debug
+        console.log(error);// for debug
         Message({
             message: error.message,
             type: 'error',

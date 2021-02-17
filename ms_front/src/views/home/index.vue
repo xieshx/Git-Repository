@@ -20,8 +20,8 @@
                             </el-dropdown-menu>
                         </el-dropdown>
                     </el-col>
-                    <el-col :span="8" >
-                        <i class="el-icon-switch-button">注销</i>
+                    <el-col :span="8">
+                        <i class="el-icon-switch-button" @click="logout"> 注销</i>
                     </el-col>
                 </el-row>
             </el-header>
@@ -73,12 +73,23 @@
 
 <script>
     export default {
+
+        data(){
+            return{
+
+            }
+        },
+
         methods: {
+
             handleOpen(key, keyPath) {
                 console.log(key, keyPath);
             },
             handleClose(key, keyPath) {
                 console.log(key, keyPath);
+            },
+            logout(){
+                this.$store.dispatch('LogOut')
             }
         }
     }

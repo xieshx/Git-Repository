@@ -1,5 +1,5 @@
 import {login} from "@/api/login";
-import {setToken, getToken} from '@/utils/auth';
+import {setToken, getToken, removeToken} from '@/utils/auth';
 
 const user = {
 
@@ -16,7 +16,6 @@ const user = {
         }
 
     },
-
 
     actions: {
         Login({commit}, userInfo) {
@@ -38,8 +37,21 @@ const user = {
                     reject(error)
                 })
             })
+        },
 
+        LogOut({ commit }) {
+            return new Promise((resolve, reject) => {
+                logout(state.token).then(() => {
+                    commit('SET_TOKEN', '');
+                    // TODO:权限清空
+                    removeToken();
+                    resolve()
+                }).catch(error => {
+                    reject(error)
+                })
+            })
         }
+
     }
 };
 

@@ -18,9 +18,13 @@
                 </el-form-item>
                 <el-form-item>
                     <!--@click等价于v-on:click-->
-                    <!--@click.native.prevent用于阻止默认事件-->
+                    <!--.prevent用于阻止默认事件-->
+                    <!--表单提交必定会跳转页面，如果action为空就会跳转到自己的页面，相当于刷新，
+                    需求一般都是自定义处理表单的数据再决定是否有必要跳转，所以要阻止表单的默认事件-->
                     <!--:loading="loading"按钮加载效果-->
-                    <el-button type="primary" :loading="loading" @click.native.prevent="login">登录</el-button>
+                    <!--.native:父组件中给子组件绑定一个原生的事件，就将子组件变成了普通的HTML标签，不加'.native'事件是无法触发的，
+                    elementUI按钮源码中有this.$emit('click', evt)，相当于native，所以不用写了-->
+                    <el-button type="primary" :loading="loading" @click.prevent="login">登录</el-button>
                 </el-form-item>
             </el-form>
         </el-card>
