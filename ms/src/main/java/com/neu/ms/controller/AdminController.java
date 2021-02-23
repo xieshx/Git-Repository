@@ -22,7 +22,8 @@ import java.util.Map;
 // maxAge：准备响应前的缓存持续的最大时间（以秒为单位）
 // @CrossOrigin(origins = "*", maxAge = 3600)
 // 现在已经实现全局跨域，配置在config.CorsConfig下
-public class LoginController {
+@RequestMapping("/admin")
+public class AdminController {
     @Resource
     private AdminService adminService;
     @Value("${jwt.tokenHeader}")
@@ -46,4 +47,12 @@ public class LoginController {
         tokenMap.put("tokenHead", tokenHead);
         return CommonResult.success(tokenMap);
     }
+
+    //TODO:/logout请求在这个Controller里不行，在其他Controller可以，关闭security后可以
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    public CommonResult logout() {
+        System.out.println("登出生成");
+        return CommonResult.success(null);
+    }
+
 }

@@ -1,26 +1,15 @@
 package com.neu.ms.controller;
 
-import com.neu.ms.mbg.mapper.MsAdminMapper;
-import com.neu.ms.service.AdminService;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import com.neu.ms.common.api.CommonResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
-
-@Controller
+@RestController
 public class TestController {
-
-    @Resource
-    private MsAdminMapper msAdminMapper;
-    @Resource
-    private AdminService adminService;
-
-    @RequestMapping("/hello")
-    public String index(Model model) {
-        model.addAttribute("name", "thymeleaf");
-        msAdminMapper.selectByPrimaryKey(1);
-        adminService.getAdminByUsername("admin");
-        return "hello";
+    @RequestMapping(value = "/logout",method = RequestMethod.POST)
+    public CommonResult Test1(){
+        System.out.println("登出生成");
+        return CommonResult.success(null);
     }
 }

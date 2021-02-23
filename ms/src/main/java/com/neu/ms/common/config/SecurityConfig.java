@@ -2,6 +2,7 @@ package com.neu.ms.common.config;
 
 import com.neu.ms.component.CustomizeAccessDeniedHandler;
 import com.neu.ms.component.CustomizeAuthenticationEntryPoint;
+import com.neu.ms.component.JwtAuthenticationTokenFilter;
 import com.neu.ms.dto.AdminUserDetails;
 import com.neu.ms.mbg.model.MsAdmin;
 import com.neu.ms.service.AdminService;
@@ -20,6 +21,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import javax.annotation.Resource;
 
@@ -53,7 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 请求授权
                 .authorizeRequests()
                 // 登录页面随便访问
-                .antMatchers("/login").permitAll()
+                .antMatchers("/admin/login").permitAll()
                 // 跨域请求先进行一次options（这是浏览器给我们加上的）
                 // options请求方法主要有两个作用：
                 // 1.获取服务器支持的HTTP请求方法
@@ -67,7 +69,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.headers().cacheControl();
 
         // TODO:配置自定义的验证过滤器
-        // http.addFilterBefore();
+        http.addFilterBefore(jwtAuthenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
         //添加自定义未授权和未登录结果返回
         http.exceptionHandling()
@@ -85,6 +87,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter(){
+        return new JwtAuthenticationTokenFilter();
     }
 
     //获取用户登录信息

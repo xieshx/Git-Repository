@@ -73,6 +73,25 @@ public class JwtTokenUtil {
         return claims.getExpiration();
     }
 
+    /**
+     *
+     * @param token 客户端传入的token
+     * @param userDetails 从数据库中查询出来的用户信息
+     * @return
+     */
+    public boolean validateToken(String token, UserDetails userDetails) {
+        String username = getUserNameFromToken(token);
+        return username.equals(userDetails.getUsername()) && !isTokenExpired(token);
+    }
+
+    /**
+     * 判断token是否已经失效
+     */
+    private boolean isTokenExpired(String token) {
+        Date expiredDate = getExpiredDateFromToken(token);
+        return expiredDate.before(new Date());
+    }
+
     //TODO:刷新token功能
 
     //私有方法，生成token
