@@ -23,6 +23,7 @@ import java.io.IOException;
  * OncePerRequestFilter：它能够确保在一次请求中只通过一次filter，而不需要重复的执行
  * 在spring中，filter都默认继承OncePerRequestFilter
  * SpringSecurity非常容易出现通一个filter被执行多遍，原因尚未探寻
+ * OncePerRequestFilter是为了兼容不同的web 容器，也就是说其实不是所有的容器都过滤一次
  */
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtAuthenticationTokenFilter.class);
@@ -41,13 +42,26 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest httpServletRequest,
                                     HttpServletResponse httpServletResponse,
                                     FilterChain filterChain) throws ServletException, IOException {
+
+        // 去请求头获取Authorization中的token内容
         String authHeader = httpServletRequest.getHeader(this.tokenHeader);
+
+        // 若token存在且以Bearer 开头
         if (authHeader != null && authHeader.startsWith(this.tokenHead)) {
-            String authToken = authHeader.substring(this.tokenHead.length());// The part after "Bearer "
+            // 将token的头去掉，即Bearer （包括空格），获得token体
+            String authToken = authHeader.substring(this.tokenHead.length());
+            // 从token中读取出用户名
             String username = jwtTokenUtil.getUserNameFromToken(authToken);
             LOGGER.info("checking username:{}", username);
+            // 若用户名不为空且
+            // SecurityContextHolder是SpringSecurity最基本的组件，是一个工具类，仅提供一些静态方法，这个工具类的目的是用来保存应用程序中当前使用人的安全上下文。
+            // 每个用户都会有一个上下文（SecurityContext），存储在SecurityContextHolder中
+            // SecurityContextHolder存储了当前与系统交互的用户的信息（Authentication认证信息），
+            // Authentication：
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+                // 从数据库获取信息并加载UserDetails
                 UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
+                // 判断token有效性
                 if (jwtTokenUtil.validateToken(authToken, userDetails)) {
                     UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                     authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));

@@ -56,12 +56,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 // 登录页面随便访问
                 .antMatchers("/admin/login").permitAll()
+                // .antMatchers("/admin/login").permitAll()
                 // 跨域请求先进行一次options（这是浏览器给我们加上的）
                 // options请求方法主要有两个作用：
                 // 1.获取服务器支持的HTTP请求方法
                 // 2.检查服务器的性能 跨域请求中，
                 // options请求是浏览器自发起的preflight request(预检请求)，以检测实际请求是否可以被浏览器接受。
-                //.antMatchers(HttpMethod.OPTIONS).permitAll()
+                .antMatchers(HttpMethod.OPTIONS).permitAll()
                 //其他请求需要认证
                 .anyRequest().authenticated();
 

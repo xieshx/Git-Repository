@@ -6,7 +6,7 @@ import {getToken} from '@/utils/auth'
 // 自定义创建的axios实例
 const service = axios.create({
     baseURL: 'http://localhost:8088', // 向后端请求的地址
-    timeout: 15000 // 请求超时时间
+    // timeout: 15000 // 请求超时时间，开发时不要用
 });
 
 // 添加请求（request）拦截器
