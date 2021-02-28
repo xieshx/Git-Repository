@@ -32,6 +32,9 @@
 </template>
 
 <script>
+
+    import {setCookie} from "@/utils/support";
+
     export default {
         name: "login",
         //下面写法等同于data:function(){ return ...}
@@ -97,7 +100,7 @@
                             // .then()就是当前面的方法执行完后再执行then()内部的程序，这样就避免了，数据没获取到等的问题
                             this.$store.dispatch('Login', this.loginForm).then(() => {
                                 this.loading = false;
-                                // setCookie("username",this.loginForm.username,15);
+                                setCookie("username",this.loginForm.username,15);
                                 // setCookie("password",this.loginForm.password,15);
                                 this.$router.push({path: '/home'})
                             }).catch(() => {

@@ -48,24 +48,34 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
         // 若token存在且以Bearer 开头
         if (authHeader != null && authHeader.startsWith(this.tokenHead)) {
+
             // 将token的头去掉，即Bearer （包括空格），获得token体
             String authToken = authHeader.substring(this.tokenHead.length());
+
             // 从token中读取出用户名
             String username = jwtTokenUtil.getUserNameFromToken(authToken);
             LOGGER.info("checking username:{}", username);
+
             // 若用户名不为空且
             // SecurityContextHolder是SpringSecurity最基本的组件，是一个工具类，仅提供一些静态方法，这个工具类的目的是用来保存应用程序中当前使用人的安全上下文。
             // 每个用户都会有一个上下文（SecurityContext），存储在SecurityContextHolder中
             // SecurityContextHolder存储了当前与系统交互的用户的信息（Authentication认证信息），
-            // Authentication：
+            // 若存在该用户并且该用户没有登录状态
+            // TODO：登录状态总是为空，这个问题的原因的是在用Spring Security加载权限的时候没有加载到，一般是手动调用重写的loadUserByUsername方法却没有赋予权限导致的
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+
                 // 从数据库获取信息并加载UserDetails
                 UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
+
                 // 判断token有效性
                 if (jwtTokenUtil.validateToken(authToken, userDetails)) {
+
+                    // 前端传来的username和password首先会进入UsernamePasswordAuthenticationToken验证(Authentication)
                     UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                     authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
                     LOGGER.info("authenticated user:{}", username);
+                    
+                    // 建立安全上下文，设置为已登录
                     SecurityContextHolder.getContext().setAuthentication(authentication);
                 }
             }

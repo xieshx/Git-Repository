@@ -5,23 +5,19 @@
                 <!--Row默认一列24，提供gutter属性来指定每一栏之间的间隔，默认间隔为0-->
                 <el-row :gutter="10">
                     <!--:offset偏移-->
-                    <el-col :span="8" :offset="8">
+                    <el-col :span="4" :offset="20" >
                         <el-dropdown trigger="click">
                             <span class="el-dropdown-link">
-                                下拉菜单
+                                {{username}}
                                 <i class="el-icon-arrow-down"></i>
                             </span>
+                            <template #dropdown>
                             <el-dropdown-menu slot="dropdown">
-                                <el-dropdown-item icon="el-icon-plus">黄金糕</el-dropdown-item>
-                                <el-dropdown-item icon="el-icon-circle-plus">狮子头</el-dropdown-item>
-                                <el-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</el-dropdown-item>
-                                <el-dropdown-item icon="el-icon-check">双皮奶</el-dropdown-item>
-                                <el-dropdown-item icon="el-icon-circle-check">蚵仔煎</el-dropdown-item>
+                                <!--给Vue组件绑定事件,需要在事件后面加上.native,有些组件(el-button..),不用加native是因为底层源码已经实现了native-->
+                                <el-dropdown-item icon="el-icon-switch-button" @click.native="logout">退出</el-dropdown-item>
                             </el-dropdown-menu>
+                            </template>
                         </el-dropdown>
-                    </el-col>
-                    <el-col :span="8">
-                        <i class="el-icon-switch-button" @click="logout"> 注销</i>
                     </el-col>
                 </el-row>
             </el-header>
@@ -72,11 +68,18 @@
 </template>
 
 <script>
+
+    import {getCookie} from "@/utils/support";
+
     export default {
 
-        data(){
-            return{
+        name: 'home',
 
+        data() {
+            // 不使用return包裹的数据会在项目的全局可见，会造成变量污染；使用return包裹后数据中变量只在当前组件中生效，不会影响其他组件
+            return {
+                // TODO:cookie删除后就不会显示了，有没有更好的办法?
+                username: getCookie('username')
             }
         },
 
@@ -88,9 +91,13 @@
             handleClose(key, keyPath) {
                 console.log(key, keyPath);
             },
-            logout(){
-                this.$store.dispatch('LogOut')
+            logout() {
+                this.$store.dispatch('LogOut').then(() => {
+                    // js刷新，相当于在浏览器上按下刷新按钮
+                    location.reload()
+                })
             }
+
         }
     }
 </script>
