@@ -22,8 +22,20 @@ const constantRouterMap = [
             },
             {
                 path: '/admin',
-                name: 'admin',
-                component: () => import('@/views/admin/index')
+                component: () => import('@/views/admin/index'),
+                redirect: '/member',
+                children: [
+                    {
+                        path: '/admin/member',
+                        name: 'member',
+                        component: () => import('@/views/admin/member/index')
+                    },
+                    {
+                        path: '/admin/role',
+                        name: 'role',
+                        component: () => import('@/views/admin/role/index')
+                    }
+                ]
             }
         ]
     },

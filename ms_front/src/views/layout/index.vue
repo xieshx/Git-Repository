@@ -15,12 +15,14 @@
                     <i class="el-icon-shopping-cart-2"></i>
                     <template #title>商品列表</template>
                 </el-menu-item>
-                <el-submenu index="/admin">
-                    <i class="el-icon-s-custom"></i>
-                    <template #title>管理员</template>
+                <el-submenu >
+                    <template #title>
+                        <i class="el-icon-s-custom"></i>
+                        <span>管理员</span>
+                    </template>
                     <el-menu-item-group>
-                        <el-menu-item>用户列表</el-menu-item>
-                        <el-menu-item>角色列表</el-menu-item>
+                        <el-menu-item index="/admin/member">用户列表</el-menu-item>
+                        <el-menu-item index="/admin/role">角色列表</el-menu-item>
                     </el-menu-item-group>
                 </el-submenu>
             </el-menu>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <router-view/>
+        角色列表
     </div>
 </template>
 
