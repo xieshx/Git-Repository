@@ -62,4 +62,11 @@ public class AdminServiceImpl implements AdminService {
         token = jwtTokenUtil.generateToken(userDetails);
         return token;
     }
+
+    @Override
+    public List<MsAdmin> getAdminList() {
+        MsAdminExample example = new MsAdminExample();
+        List<MsAdmin> msAdmins = msAdminMapper.selectByExample(example);
+        return msAdmins;
+    }
 }

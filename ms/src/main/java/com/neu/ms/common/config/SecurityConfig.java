@@ -6,7 +6,6 @@ import com.neu.ms.component.JwtAuthenticationTokenFilter;
 import com.neu.ms.dto.AdminUserDetails;
 import com.neu.ms.mbg.model.MsAdmin;
 import com.neu.ms.service.AdminService;
-import com.neu.ms.service.impl.AdminServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
@@ -55,7 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 请求授权
                 .authorizeRequests()
                 // 登录页面随便访问
-                .antMatchers("/admin/login").permitAll()
+                .antMatchers("/admin/login","/admin/register").permitAll()
                 // .antMatchers("/admin/login").permitAll()
                 // 跨域请求先进行一次options（这是浏览器给我们加上的）
                 // options请求方法主要有两个作用：

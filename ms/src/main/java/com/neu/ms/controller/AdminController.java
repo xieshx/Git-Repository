@@ -2,6 +2,7 @@ package com.neu.ms.controller;
 
 import com.neu.ms.common.api.CommonResult;
 import com.neu.ms.dto.AdminLoginParam;
+import com.neu.ms.mbg.model.MsAdmin;
 import com.neu.ms.service.AdminService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 // 这里要用@RestController(=@Controller + @ResponseBody)
@@ -48,11 +50,21 @@ public class AdminController {
         return CommonResult.success(tokenMap);
     }
 
-    //TODO:/logout请求在这个Controller里不行，在其他Controller可以，关闭security后可以
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     public CommonResult logout() {
-        System.out.println("登出生成");
         return CommonResult.success(null);
+    }
+
+    @RequestMapping(value = "/register",method = RequestMethod.POST)
+    public CommonResult register(){
+        return null;
+    }
+
+    // TODO:分页功能
+    @RequestMapping(value = "/list",method = RequestMethod.GET)
+    public CommonResult list(){
+        List<MsAdmin> adminList = adminService.getAdminList();
+        return CommonResult.success(adminList);
     }
 
 }
