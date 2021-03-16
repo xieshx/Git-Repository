@@ -2,6 +2,7 @@ package com.neu.ms.service.impl;
 
 import com.neu.ms.common.utils.JwtTokenUtil;
 import com.neu.ms.dto.AdminLoginParam;
+import com.neu.ms.dto.AdminRegisterParam;
 import com.neu.ms.mbg.mapper.MsAdminMapper;
 import com.neu.ms.mbg.model.MsAdmin;
 import com.neu.ms.mbg.model.MsAdminExample;
@@ -68,5 +69,10 @@ public class AdminServiceImpl implements AdminService {
         MsAdminExample example = new MsAdminExample();
         List<MsAdmin> msAdmins = msAdminMapper.selectByExample(example);
         return msAdmins;
+    }
+
+    @Override
+    public Boolean register(AdminRegisterParam adminRegisterParam) {
+        return null;
     }
 }

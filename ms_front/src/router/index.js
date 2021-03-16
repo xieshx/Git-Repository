@@ -41,6 +41,7 @@ const constantRouterMap = [
     },
     {path: '/login', component: () => import('@/views/login')},
     {path: '/error', component: () => import('@/views/error')},
+    {path: '/register', component: () => import('@/views/admin/register/index')}
 ];
 
 // 1.URL上的#号的特性（即改变 URL 却不请求后端），就可以在前端实现页面的整体变化，而不用每次都去请求后端，

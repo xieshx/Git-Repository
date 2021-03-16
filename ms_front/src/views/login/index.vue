@@ -25,6 +25,7 @@
                     <!--.native:父组件中给子组件绑定一个原生的事件，就将子组件变成了普通的HTML标签，不加'.native'事件是无法触发的，
                     elementUI按钮源码中有this.$emit('click', evt)，相当于native，所以不用写了-->
                     <el-button type="primary" :loading="loading" @click.prevent="login">登录</el-button>
+                    <router-link :to="{path: '/register'}" tag="el-button">注册</router-link>
                 </el-form-item>
             </el-form>
         </el-card>
@@ -83,10 +84,8 @@
         //注意是methods而不是method
         methods: {
             login() {
-
                 //也可以用this.$refs['loginForm']
                 this.$refs.loginForm.validate(
-
                     // 箭头函数
                     // 1、()=>{}，里面必须加return语句才能返回值
                     // 2、()=>()，将括号内的结果直接返回，不用写return
@@ -128,5 +127,9 @@
         margin: 150px auto;
         border-radius: 15px;
         box-shadow: 0 0 25px #cac6c6;
+    }
+    .el-button{
+        margin-left:20px;
+        margin-right: 20px;
     }
 </style>

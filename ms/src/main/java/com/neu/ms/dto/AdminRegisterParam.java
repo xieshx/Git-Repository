@@ -7,6 +7,7 @@ import lombok.Setter;
 @Setter
 public class AdminRegisterParam {
     private String username;
-    private String password;
-    private String nickName;
+    private String firstPassword;
+    private String secondPassword;
+    private String nickname;
 }

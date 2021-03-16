@@ -17,3 +17,11 @@ export function logout() {
         method: 'post'
     })
 }
+
+export function createAdmin(data) {
+    return request({
+        url: '/admin/register',
+        method: 'post',
+        data: data
+    })
+}

@@ -2,6 +2,7 @@ package com.neu.ms.controller;
 
 import com.neu.ms.common.api.CommonResult;
 import com.neu.ms.dto.AdminLoginParam;
+import com.neu.ms.dto.AdminRegisterParam;
 import com.neu.ms.mbg.model.MsAdmin;
 import com.neu.ms.service.AdminService;
 import org.springframework.beans.factory.annotation.Value;
@@ -56,7 +57,8 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/register",method = RequestMethod.POST)
-    public CommonResult register(){
+    public CommonResult register(@RequestBody AdminRegisterParam adminRegisterParam){
+        adminService.register(adminRegisterParam);
         return null;
     }
 
