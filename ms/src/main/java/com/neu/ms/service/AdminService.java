@@ -15,7 +15,7 @@ public interface AdminService {
     String login(AdminLoginParam adminLoginParam);
 
     //获取所有用户，生成列表
-    List<MsAdmin> getAdminList();
+    List<MsAdmin> getAdminList(Integer pageStart,Integer pageSize);
 
     //注册用户
     Boolean register(AdminRegisterParam adminRegisterParam);

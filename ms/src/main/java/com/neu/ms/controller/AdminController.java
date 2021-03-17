@@ -6,10 +6,7 @@ import com.neu.ms.dto.AdminRegisterParam;
 import com.neu.ms.mbg.model.MsAdmin;
 import com.neu.ms.service.AdminService;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -56,16 +53,17 @@ public class AdminController {
         return CommonResult.success(null);
     }
 
-    @RequestMapping(value = "/register",method = RequestMethod.POST)
-    public CommonResult register(@RequestBody AdminRegisterParam adminRegisterParam){
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public CommonResult register(@RequestBody AdminRegisterParam adminRegisterParam) {
         adminService.register(adminRegisterParam);
         return null;
     }
 
-    // TODO:分页功能
-    @RequestMapping(value = "/list",method = RequestMethod.GET)
-    public CommonResult list(){
-        List<MsAdmin> adminList = adminService.getAdminList();
+    // 完成分页功能
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public CommonResult list(@RequestParam(value = "pageStart", defaultValue = "1") Integer pageStart,
+                             @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize) {
+        List<MsAdmin> adminList = adminService.getAdminList(pageStart,pageSize);
         return CommonResult.success(adminList);
     }
 

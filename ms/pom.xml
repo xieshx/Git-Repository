@@ -44,6 +44,7 @@
         </dependency>
 
         <!--MyBatis分页插件-->
+        <!--在与SpringBoot整合时，只要整合了PagerHelper就自动整合了MyBatis-->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-starter</artifactId>

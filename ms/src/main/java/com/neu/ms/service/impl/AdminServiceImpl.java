@@ -1,5 +1,6 @@
 package com.neu.ms.service.impl;
 
+import com.github.pagehelper.PageHelper;
 import com.neu.ms.common.utils.JwtTokenUtil;
 import com.neu.ms.dto.AdminLoginParam;
 import com.neu.ms.dto.AdminRegisterParam;
@@ -56,7 +57,7 @@ public class AdminServiceImpl implements AdminService {
         // passwordEncoder.matches(明文,密文)
         // TODO:异常日志功能
         if (!passwordEncoder.matches(adminLoginParam.getPassword(), userDetails.getPassword())) {
-            LOGGER.warn("登录异常:{}","密码错误");
+            LOGGER.warn("登录异常:{}", "密码错误");
             // 运行时异常
             throw new BadCredentialsException("密码不正确");
         }
@@ -64,15 +65,20 @@ public class AdminServiceImpl implements AdminService {
         return token;
     }
 
+
     @Override
-    public List<MsAdmin> getAdminList() {
+    public List<MsAdmin> getAdminList(Integer pageStart, Integer pageSize) {
+        // 在需要进行分页的查询方法前调用这个静态方法，紧跟在后面的第一个查询方法会被分页
+        PageHelper.startPage(pageStart, pageSize);
         MsAdminExample example = new MsAdminExample();
         List<MsAdmin> msAdmins = msAdminMapper.selectByExample(example);
         return msAdmins;
     }
 
+    // TODO:注册功能需要等待权限功能开发
     @Override
     public Boolean register(AdminRegisterParam adminRegisterParam) {
+        MsAdminExample example = new MsAdminExample();
         return null;
     }
 }
