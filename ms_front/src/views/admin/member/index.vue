@@ -1,52 +1,54 @@
 <template>
     <div>
         <el-table :data="tableData" stripe>
-
             <el-table-column
-                    prop="date"
+                    prop="createTime"
                     label="日期">
             </el-table-column>
-
             <el-table-column
-                    prop="name"
+                    prop="username"
                     label="姓名">
             </el-table-column>
-
             <el-table-column
-                    prop="address"
-                    label="地址">
+                    prop="status"
+                    label="状态">
             </el-table-column>
-
         </el-table>
+        <div class="block">
+            <el-pagination
+                    @size-change="handleSizeChange"
+                    @current-change="handleCurrentChange"
+                    :page-size=pageSize
+                    :total=total
+                    layout="total, prev, pager, next">
+            </el-pagination>
+        </div>
     </div>
+
 </template>
 
 <script>
+    import {getAdminList} from '@/api/admin';
+
     export default {
         data() {
             return {
-                tableData: [
-                    {
-                        date: '2016-05-02',
-                        name: '王小虎',
-                        address: '上海市普陀区金沙江路 1518 弄'
-                    },
-                    {
-                        date: '2016-05-04',
-                        name: '王小虎',
-                        address: '上海市普陀区金沙江路 1517 弄'
-                    },
-                    {
-                        date: '2016-05-01',
-                        name: '王小虎',
-                        address: '上海市普陀区金沙江路 1519 弄'
-                    },
-                    {
-                        date: '2016-05-03',
-                        name: '王小虎',
-                        address: '上海市普陀区金沙江路 1516 弄'
-                    }
-                ]
+                pageSize: 5,
+                currentPage: 1,
+                total: 100,
+                tableData: null
+            }
+        },
+        methods: {
+            handleSizeChange(val) {
+                console.log(`每页 ${val} 条`);
+            },
+            handleCurrentChange(val) {
+                console.log(`当前页: ${val}`);
+                getAdminList().then(response=>{
+                    console.log(response);
+                    this.tableData=response.data.list;
+                });
             }
         }
     }

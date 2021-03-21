@@ -2,6 +2,7 @@ package com.neu.ms.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.neu.ms.common.utils.JwtTokenUtil;
 import com.neu.ms.dto.AdminLoginParam;
 import com.neu.ms.dto.AdminRegisterParam;
@@ -9,7 +10,7 @@ import com.neu.ms.mbg.mapper.MsAdminMapper;
 import com.neu.ms.mbg.model.MsAdmin;
 import com.neu.ms.mbg.model.MsAdminExample;
 import com.neu.ms.service.AdminService;
-import com.neu.ms.vo.PageInfo;
+import com.neu.ms.common.api.CommonPage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -69,12 +70,14 @@ public class AdminServiceImpl implements AdminService {
 
 
     @Override
-    public PageInfo getAdminList(Integer pageStart, Integer pageSize) {
+    public CommonPage getAdminList(Integer pageStart, Integer pageSize) {
         // 在需要进行分页的查询方法前调用这个静态方法，紧跟在后面的第一个查询方法会被分页
-        Page<Object> page = PageHelper.startPage(pageStart, pageSize);
+        PageHelper.startPage(pageStart, pageSize);
         MsAdminExample example = new MsAdminExample();
         List<MsAdmin> msAdmins = msAdminMapper.selectByExample(example);
-        return new PageInfo(page.getTotal(), msAdmins);
+        PageInfo<MsAdmin> pageInfo = new PageInfo<>(msAdmins);
+        //TODO:将数据转换为VO再向前端传输
+        return null;
     }
 
     // TODO:注册功能需要等待权限功能开发

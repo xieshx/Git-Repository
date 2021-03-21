@@ -25,3 +25,10 @@ export function createAdmin(data) {
         data: data
     })
 }
+
+export function getAdminList() {
+    return request({
+        url: '/admin/list',
+        method: 'get',
+    })
+}

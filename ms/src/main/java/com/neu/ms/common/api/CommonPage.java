@@ -1,4 +1,4 @@
-package com.neu.ms.vo;
+package com.neu.ms.common.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-public class PageInfo<T> {
+public class CommonPage<T> {
     private long total;
-    private List<T> data;
+    private List<T> list;
 }

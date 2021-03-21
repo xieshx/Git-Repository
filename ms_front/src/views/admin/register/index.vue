@@ -27,7 +27,7 @@
 </template>
 
 <script>
-    import {createAdmin} from '@/api/login';
+    import {createAdmin} from '@/api/admin';
 
     export default {
         name: "register",

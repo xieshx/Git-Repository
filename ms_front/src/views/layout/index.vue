@@ -15,7 +15,8 @@
                     <i class="el-icon-shopping-cart-2"></i>
                     <template #title>商品列表</template>
                 </el-menu-item>
-                <el-submenu >
+                <!--el-submenu的index不写报错-->
+                <el-submenu index="">
                     <template #title>
                         <i class="el-icon-s-custom"></i>
                         <span>管理员</span>
