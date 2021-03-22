@@ -1,6 +1,6 @@
 package com.neu.ms.component;
 
-import com.neu.ms.common.utils.JwtTokenUtil;
+import com.neu.ms.common.utils.JwtTokenUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -34,7 +34,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     private String tokenHead;
 
     @Resource
-    private JwtTokenUtil jwtTokenUtil;
+    private JwtTokenUtils jwtTokenUtils;
     @Resource
     private UserDetailsService userDetailsService;
 
@@ -53,7 +53,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
             String authToken = authHeader.substring(this.tokenHead.length());
 
             // 从token中读取出用户名
-            String username = jwtTokenUtil.getUserNameFromToken(authToken);
+            String username = jwtTokenUtils.getUserNameFromToken(authToken);
             LOGGER.info("checking username:{}", username);
 
             // 若用户名不为空且
@@ -68,7 +68,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
                 UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
 
                 // 判断token有效性
-                if (jwtTokenUtil.validateToken(authToken, userDetails)) {
+                if (jwtTokenUtils.validateToken(authToken, userDetails)) {
 
                     // 前端传来的username和password首先会进入UsernamePasswordAuthenticationToken验证(Authentication)
                     UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());

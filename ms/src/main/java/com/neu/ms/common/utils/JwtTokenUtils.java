@@ -32,7 +32,7 @@ import java.util.Map;
 
 //需要Component注解将类注入到spring容器中，这样@value的值才能注入
 @Component
-public class JwtTokenUtil {
+public class JwtTokenUtils {
     private static final String CLAIM_KEY_USERNAME = "sub";
     private static final String CLAIM_KEY_CREATED = "created";
     @Value("${jwt.secret}")

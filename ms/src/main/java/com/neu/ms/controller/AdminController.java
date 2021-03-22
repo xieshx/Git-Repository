@@ -1,10 +1,10 @@
 package com.neu.ms.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.neu.ms.common.api.CommonResult;
 import com.neu.ms.dto.AdminLoginParam;
 import com.neu.ms.dto.AdminRegisterParam;
 import com.neu.ms.service.AdminService;
-import com.neu.ms.common.api.CommonPage;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
@@ -57,12 +57,11 @@ public class AdminController {
         adminService.register(adminRegisterParam);
         return null;
     }
-
-    // 完成分页功能
+    
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public CommonResult list(@RequestParam(value = "pageStart", defaultValue = "1") Integer pageStart,
                              @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize) {
-        CommonPage adminList = adminService.getAdminList(pageStart, pageSize);
+        PageInfo adminList = adminService.getAdminList(pageStart, pageSize);
         return CommonResult.success(adminList);
     }
 

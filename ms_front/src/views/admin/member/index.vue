@@ -2,16 +2,16 @@
     <div>
         <el-table :data="tableData" stripe>
             <el-table-column
+                    prop="nickName"
+                    label="昵称">
+            </el-table-column>
+            <el-table-column
                     prop="createTime"
                     label="日期">
             </el-table-column>
             <el-table-column
                     prop="username"
-                    label="姓名">
-            </el-table-column>
-            <el-table-column
-                    prop="status"
-                    label="状态">
+                    label="用户名">
             </el-table-column>
         </el-table>
         <div class="block">

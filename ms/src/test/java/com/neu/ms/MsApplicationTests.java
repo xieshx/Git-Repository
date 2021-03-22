@@ -1,6 +1,6 @@
 package com.neu.ms;
 
-import com.neu.ms.common.utils.JwtTokenUtil;
+import com.neu.ms.common.utils.JwtTokenUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 class MsApplicationTests {
 
     @Resource
-    JwtTokenUtil jwtTokenUtil;
+    JwtTokenUtils jwtTokenUtils;
 
     @Resource
     private PasswordEncoder passwordEncoder;
