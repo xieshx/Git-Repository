@@ -57,7 +57,7 @@ public class AdminController {
         adminService.register(adminRegisterParam);
         return null;
     }
-    
+
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public CommonResult list(@RequestParam(value = "pageStart", defaultValue = "1") Integer pageStart,
                              @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize) {
