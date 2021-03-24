@@ -41,24 +41,40 @@ public class MinioController {
             } else {
                 // 创建存储桶
                 minioClient.makeBucket(MakeBucketArgs.builder().bucket(BUCKET_NAME).build());
-                String filename = file.getOriginalFilename();
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-                // 设置存储对象名称
-                String objectName = sdf.format(new Date()) + "/" + filename;
-                // 使用putObject(Uploads data from a stream to an object)上传一个文件到存储桶中
-                PutObjectArgs objectArgs = PutObjectArgs.builder()
-                        .object(objectName)
-                        .bucket(BUCKET_NAME)
-                        .contentType(file.getContentType())
-                        .stream(file.getInputStream(),file.getSize(),ObjectWriteArgs.MIN_MULTIPART_SIZE).build();
-                minioClient.putObject(objectArgs);
-                LOGGER.info("文件上传成功!");
             }
+            String filename = file.getOriginalFilename();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+            // 设置存储对象名称
+            String objectName = sdf.format(new Date()) + "/" + filename;
+            // 使用putObject(Uploads data from a stream to an object)上传一个文件到存储桶中
+            PutObjectArgs objectArgs = PutObjectArgs.builder()
+                    .object(objectName)
+                    .bucket(BUCKET_NAME)
+                    .contentType(file.getContentType())
+                    .stream(file.getInputStream(),file.getSize(),ObjectWriteArgs.MIN_MULTIPART_SIZE).build();
+            minioClient.putObject(objectArgs);
+            LOGGER.info("文件上传成功!");
+            return CommonResult.success(null);
         } catch (Exception e) {
             e.printStackTrace();
             LOGGER.info("上传发生错误: {}！", e.getMessage());
         }
         return CommonResult.failed("上传失败");
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public CommonResult delete(@RequestParam("objectName") String objectName){
+        try {
+            MinioClient minioClient = MinioClient.builder()
+                    .endpoint(ENDPOINT)
+                    .credentials(ACCESS_KEY,SECRET_KEY)
+                    .build();
+            minioClient.removeObject(RemoveObjectArgs.builder().bucket(BUCKET_NAME).object(objectName).build());
+            return CommonResult.success(null);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return CommonResult.failed("删除失败");
     }
 
 }

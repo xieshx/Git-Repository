@@ -40,7 +40,12 @@
                             <el-breadcrumb-item>活动详情</el-breadcrumb-item>
                         </el-breadcrumb>
                     </el-col>
-                    <el-col :span="4">
+                    <el-col :span="2">
+                        <el-avatar :size="30" src="https://empty" @error="errorHandler">
+                            <img src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"/>
+                        </el-avatar>
+                    </el-col>
+                    <el-col :span="2">
                         <el-dropdown trigger="click">
                             <span class="el-dropdown-link">
                                 {{username}}
@@ -88,6 +93,9 @@
                     // js刷新，相当于在浏览器上按下刷新按钮
                     location.reload()
                 })
+            },
+            errorHandler(){
+                return true
             }
         }
     }
