@@ -40,19 +40,19 @@
                             <el-breadcrumb-item>活动详情</el-breadcrumb-item>
                         </el-breadcrumb>
                     </el-col>
-                    <el-col :span="2">
-                        <el-avatar :size="30" src="https://empty" @error="errorHandler">
-                            <img src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"/>
-                        </el-avatar>
-                    </el-col>
-                    <el-col :span="2">
+                    <el-col :span="4">
                         <el-dropdown trigger="click">
-                            <span class="el-dropdown-link">
-                                {{username}}
-                                <i class="el-icon-arrow-down"></i>
-                            </span>
+                            <el-avatar :size="30" src="avatarSrc"
+                                       @error="errorHandler">
+                                <el-image class="el-icon-picture-outline"></el-image>
+                            </el-avatar>
                             <template #dropdown>
                                 <el-dropdown-menu slot="dropdown">
+                                    <el-avatar :size="60" src="https://empty" @click.native="handleShowAvatarDialog"
+                                               @error="errorHandler">
+                                        <el-image class="el-icon-picture-outline"></el-image>
+                                    </el-avatar>
+                                    {{username}}
                                     <!--给Vue组件绑定事件,需要在事件后面加上.native,有些组件(el-button..),不用加native是因为底层源码已经实现了native-->
                                     <el-dropdown-item icon="el-icon-switch-button" @click.native="logout">退出
                                     </el-dropdown-item>
@@ -67,18 +67,23 @@
                 <router-view/>
             </el-main>
         </el-container>
+        <avatar ref="handelAvatar"></avatar>
     </el-container>
 </template>
 
 <script>
     import {getCookie} from "@/utils/support";
+    import avatar from "@/components/avatar"
 
     export default {
         name: "layout",
+        components: {
+            avatar
+        },
         data() {
             return {
-                isCollapse: false,
-                username: getCookie('username')
+                username: getCookie('username'),
+                avatarSrc: 'http://localhost:9000/msbucket/20210325/%E7%BA%B3%E5%B0%BC.jpg',
             }
         },
         methods: {
@@ -94,8 +99,11 @@
                     location.reload()
                 })
             },
-            errorHandler(){
+            errorHandler() {
                 return true
+            },
+            handleShowAvatarDialog() {
+                this.$refs.handelAvatar.dialogVisible = true
             }
         }
     }
@@ -107,7 +115,6 @@
         margin-bottom: 1px;
     }
 
-    .el-dropdown-link,
     .el-icon-switch-button {
         cursor: pointer;
         font-size: 15px;
@@ -120,5 +127,13 @@
 
     .el-row {
         height: 100%;
+    }
+
+    .el-dropdown-menu {
+        width: 200px;
+    }
+
+    .el-avatar {
+        cursor: pointer;
     }
 </style>
