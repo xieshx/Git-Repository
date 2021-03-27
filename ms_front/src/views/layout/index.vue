@@ -42,13 +42,12 @@
                     </el-col>
                     <el-col :span="4">
                         <el-dropdown trigger="click">
-                            <el-avatar :size="30" src="avatarSrc"
-                                       @error="errorHandler">
+                            <el-avatar :size="30" :src="avatarSrc" shape="square" @error="errorHandler">
                                 <el-image class="el-icon-picture-outline"></el-image>
                             </el-avatar>
                             <template #dropdown>
                                 <el-dropdown-menu slot="dropdown">
-                                    <el-avatar :size="60" src="https://empty" @click.native="handleShowAvatarDialog"
+                                    <el-avatar :size="60" :src="avatarSrc" @click.native="handleShowAvatarDialog"
                                                @error="errorHandler">
                                         <el-image class="el-icon-picture-outline"></el-image>
                                     </el-avatar>
@@ -83,7 +82,7 @@
         data() {
             return {
                 username: getCookie('username'),
-                avatarSrc: 'http://localhost:9000/msbucket/20210325/%E7%BA%B3%E5%B0%BC.jpg',
+                avatarSrc: 'http://localhost:9000/msbucket/20210325/girl.jpg'
             }
         },
         methods: {

@@ -5,9 +5,6 @@
                 :visible.sync="dialogVisible"
                 width="30%"
                 :before-close="handleClose">
-            <el-avatar :size="100" src="https://empty" @error="errorHandler">
-                <el-image class="el-icon-picture-outline"></el-image>
-            </el-avatar>
             <el-upload
                     class="avatar-uploader"
                     action="https://jsonplaceholder.typicode.com/posts/"
@@ -33,7 +30,7 @@
         data() {
             return {
                 dialogVisible: false,
-                imageUrl: ''
+                imageUrl:''
             };
         },
         methods: {
@@ -65,5 +62,27 @@
 </script>
 
 <style>
-
+    .avatar-uploader .el-upload {
+        border: 1px dashed #d9d9d9;
+        border-radius: 6px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+    .avatar-uploader .el-upload:hover {
+        border-color: #409EFF;
+    }
+    .avatar-uploader-icon {
+        font-size: 28px;
+        color: #8c939d;
+        width: 178px;
+        height: 178px;
+        line-height: 178px;
+        text-align: center;
+    }
+    .avatar {
+        width: 178px;
+        height: 178px;
+        display: block;
+    }
 </style>
