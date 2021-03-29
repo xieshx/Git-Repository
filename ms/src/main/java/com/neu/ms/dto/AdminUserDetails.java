@@ -63,4 +63,8 @@ public class AdminUserDetails implements UserDetails {
     public boolean isEnabled() {
         return admin.getStatus();
     }
+
+    public String getAvatarAddress(){
+        return admin.getAvatarAddress();
+    }
 }

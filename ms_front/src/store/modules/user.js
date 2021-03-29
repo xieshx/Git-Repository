@@ -28,6 +28,7 @@ const user = {
                 login(username, userInfo.password).then(response => {
                     const data = response.data;
                     const tokenStr = data.tokenHead + data.token;
+                    // todo:获取头像地址
                     // 将token存储到cookie中
                     setToken(tokenStr);
                     // 并且将token更新到store中
@@ -51,9 +52,7 @@ const user = {
                 })
             })
         }
-
     }
 };
-
 
 export default user

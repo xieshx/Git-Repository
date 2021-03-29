@@ -1,12 +1,16 @@
 package com.neu.ms.controller;
 
+import cn.hutool.json.JSONUtil;
 import com.github.pagehelper.PageInfo;
 import com.neu.ms.common.api.CommonResult;
 import com.neu.ms.dto.AdminLoginParam;
 import com.neu.ms.dto.AdminRegisterParam;
+import com.neu.ms.mbg.model.MsAdmin;
 import com.neu.ms.service.AdminService;
+import com.neu.ms.vo.AdminVo;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.BeanUtils;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -40,11 +44,16 @@ public class AdminController {
         if (token == null) {
             return CommonResult.validateFailed("用户名或密码错误");
         }
-        Map<String, String> tokenMap = new HashMap<>();
-        tokenMap.put("token", token);
+        Map<String, Object> adminMap = new HashMap<>();
+        adminMap.put("token", token);
         // TODO:tokenHead是什么作用？
-        tokenMap.put("tokenHead", tokenHead);
-        return CommonResult.success(tokenMap);
+        adminMap.put("tokenHead", tokenHead);
+        // TODO:总感觉这样不好
+        MsAdmin admin = adminService.getAdminByUsername(adminLoginParam.getUsername());
+        AdminVo adminVo=new AdminVo();
+        BeanUtils.copyProperties(admin, adminVo);
+        adminMap.put("adminInfo",adminVo);
+        return CommonResult.success(adminMap);
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.POST)

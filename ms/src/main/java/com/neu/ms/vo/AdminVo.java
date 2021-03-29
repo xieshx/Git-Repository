@@ -13,4 +13,5 @@ public class AdminVo {
     private Date createTime;
     private Date endTime;
     private Boolean status;
+    private String avatarAddress;
 }
