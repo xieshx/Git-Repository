@@ -9,10 +9,13 @@ import com.neu.ms.mbg.model.MsAdmin;
 import com.neu.ms.service.AdminService;
 import com.neu.ms.vo.AdminVo;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.BeanUtils;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.security.Principal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,34 +47,54 @@ public class AdminController {
         if (token == null) {
             return CommonResult.validateFailed("用户名或密码错误");
         }
-        Map<String, Object> adminMap = new HashMap<>();
-        adminMap.put("token", token);
+        Map<String, String> tokenMap = new HashMap<>();
+        tokenMap.put("token", token);
         // TODO:tokenHead是什么作用？
-        adminMap.put("tokenHead", tokenHead);
-        // TODO:总感觉这样不好
-        MsAdmin admin = adminService.getAdminByUsername(adminLoginParam.getUsername());
-        AdminVo adminVo=new AdminVo();
-        BeanUtils.copyProperties(admin, adminVo);
-        adminMap.put("adminInfo",adminVo);
-        return CommonResult.success(adminMap);
+        tokenMap.put("tokenHead", tokenHead);
+        return CommonResult.success(tokenMap);
     }
 
+    // 登出
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     public CommonResult logout() {
         return CommonResult.success(null);
     }
 
+    // 用户注册
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public CommonResult register(@RequestBody AdminRegisterParam adminRegisterParam) {
         adminService.register(adminRegisterParam);
         return null;
     }
 
+    // 用户列表
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public CommonResult list(@RequestParam(value = "pageStart", defaultValue = "1") Integer pageStart,
                              @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize) {
         PageInfo adminList = adminService.getAdminList(pageStart, pageSize);
         return CommonResult.success(adminList);
+    }
+
+    // 当前登录用户的信息
+    // 在JwtAuthenticationTokenFilter中已经将登录信息保存到安全上下文中了，
+    // 在Spring框架可以通过以下方法获取当前登录用户的信息：
+    // 1.在Bean中获取：Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    // 2.在Controller的参数列表中获取用户信息：Principal principal（目前用此方法）
+    // 3.在Controller的参数列表中获取用户信息：Authentication authentication
+    // 4.通过HttpServletRequest获取：（感觉跟3没差）
+    // 在Controller的参数列表中HttpServletRequest request
+    // Principal principal = request.getUserPrincipal();
+    // 5.@AuthenticationPrincipal注解在，Controller的参数列表中@AuthenticationPrincipal UserDto user（使用自己的Dto）
+    @RequestMapping(value = "/info", method = RequestMethod.GET)
+    public CommonResult getInfo(Authentication principal) {
+        if(principal==null){
+            return CommonResult.unauthorized(null);
+        }
+        Map<String, Object> data = new HashMap<>();
+        MsAdmin admin = adminService.getAdminByUsername(principal.getName());
+        AdminVo adminVo=new AdminVo();
+        BeanUtils.copyProperties(admin, adminVo);
+        return CommonResult.success(adminVo);
     }
 
 }

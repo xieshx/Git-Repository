@@ -42,12 +42,12 @@
                     </el-col>
                     <el-col :span="4">
                         <el-dropdown trigger="click">
-                            <el-avatar :size="30" :src="avatarSrc" shape="square" @error="errorHandler">
+                            <el-avatar :size="30" :src="avatarAddr" shape="square" @error="errorHandler">
                                 <el-image class="el-icon-picture-outline"></el-image>
                             </el-avatar>
                             <template #dropdown>
                                 <el-dropdown-menu slot="dropdown">
-                                    <el-avatar :size="60" :src="avatarSrc" @click.native="handleShowAvatarDialog"
+                                    <el-avatar :size="60" :src="avatarAddr" @click.native="handleShowAvatarDialog"
                                                @error="errorHandler">
                                         <el-image class="el-icon-picture-outline"></el-image>
                                     </el-avatar>
@@ -73,16 +73,21 @@
 <script>
     import {getCookie} from "@/utils/support";
     import avatar from "@/components/avatar"
+    import { mapGetters } from 'vuex'
 
     export default {
         name: "layout",
         components: {
             avatar
         },
+        computed:{
+            ...mapGetters([
+                'avatarAddr',
+            ])
+        },
         data() {
             return {
                 username: getCookie('username'),
-                avatarSrc: 'http://localhost:9000/msbucket/20210325/girl.jpg'
             }
         },
         methods: {

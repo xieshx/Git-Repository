@@ -5,9 +5,10 @@ import router from '@/router/index'
 import NProgress from 'nprogress' // Progress 进度条
 import 'nprogress/nprogress.css' // Progress 进度条样式
 import {getToken} from "@/utils/auth";
+import store from '@/store'
 
 // 白名单，随意访问
-const whiteList = ['/login','/error','/register'];
+const whiteList = ['/login', '/error', '/register'];
 
 router.beforeEach((to, from, next) => {
     NProgress.start();
@@ -19,6 +20,8 @@ router.beforeEach((to, from, next) => {
         } else {
             // 直接放行
             // TODO:不同等级用户访问的权限的验证
+            // 拉取当前用户的登录信息
+            store.dispatch('GetInfo').then();
             next()
         }
     } else {

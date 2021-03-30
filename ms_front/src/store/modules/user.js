@@ -1,4 +1,4 @@
-import {login, logout} from "@/api/admin";
+import {login, logout, getInfo} from "@/api/admin";
 import {getToken, removeToken, setToken} from '@/utils/auth';
 
 const user = {
@@ -13,7 +13,13 @@ const user = {
         // 这个回调函数就是我们实际进行状态更改的地方，并且它会接受state作为第一个参数，额外的参数即mutation的载荷（payload）
         SET_TOKEN: (state, token) => {
             state.token = token
-        }
+        },
+        SET_NAME: (state, name) => {
+            state.name = name
+        },
+        SET_AVATAR: (state, avatarAddr) => {
+            state.avatarAddr = avatarAddr
+        },
 
     },
 
@@ -47,6 +53,19 @@ const user = {
                     // TODO:权限清空
                     removeToken();
                     resolve()
+                }).catch(error => {
+                    reject(error)
+                })
+            })
+        },
+
+        GetInfo({commit}) {
+            return new Promise((resolve, reject) => {
+                getInfo().then(response => {
+                    const data = response.data;
+                    commit('SET_NAME', data.username);
+                    commit('SET_AVATAR', data.avatarAddress);
+                    resolve(response)
                 }).catch(error => {
                     reject(error)
                 })

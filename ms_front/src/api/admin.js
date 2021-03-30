@@ -32,3 +32,10 @@ export function getAdminList() {
         method: 'get',
     })
 }
+
+export function getInfo() {
+    return request({
+        url: '/admin/info',
+        method: 'get',
+    })
+}

@@ -3,7 +3,9 @@
  * 比如把state状态的数据进行一次映射或者筛选，再把这个结果重新计算并提供给组件使用
  */
 const getters = {
-    token: state => state.user.token
+    token: state => state.user.token,
+    avatarAddr: state => state.user.avatarAddr,
+    name: state => state.user.name
 };
 
 
