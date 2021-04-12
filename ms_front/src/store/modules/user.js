@@ -5,11 +5,11 @@ const user = {
 
     state: {
         token: getToken(),
+        avatar: ''
     },
 
     // 更改 Vuex 的 store 中的状态的唯一方法是提交 mutation。
     mutations: {
-
         // 这个回调函数就是我们实际进行状态更改的地方，并且它会接受state作为第一个参数，额外的参数即mutation的载荷（payload）
         SET_TOKEN: (state, token) => {
             state.token = token
@@ -20,7 +20,6 @@ const user = {
         SET_AVATAR: (state, avatarAddr) => {
             state.avatarAddr = avatarAddr
         },
-
     },
 
     actions: {

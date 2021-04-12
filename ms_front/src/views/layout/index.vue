@@ -81,6 +81,7 @@
             avatar
         },
         computed:{
+            // vue实例重新加载，从而，store也被重置了。store是用来存储组件状态的，而不是用来做本地数据存储的
             ...mapGetters([
                 'avatarAddr',
             ])

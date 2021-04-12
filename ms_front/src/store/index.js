@@ -7,6 +7,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import user from "@/store/modules/user";
 import getters from "@/store/getters";
+import saveData from 'vue-savedata';
 
 Vue.use(Vuex);
 
@@ -14,7 +15,9 @@ const store = new Vuex.Store({
     modules:{
         user
     },
-    getters
+    getters,
+    // 数据缓存，解决刷新后state数据覆盖后丢失问题
+    plugins:[saveData()]
 });
 
 export default store
