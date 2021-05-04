@@ -75,10 +75,15 @@
                 const {file} = params;
                 const fromData = new FormData();
                 fromData.append('file', file);
-                uploadAvatar(fromData)
+                uploadAvatar(fromData).then(response=>{
+                    this.$store.commit('SET_AVATAR',response.data.fileUrl);
+                    location.reload();
+                    console.log(this.$store.getters.avatarAddr)
+                })
             }
         }
     };
+
 </script>
 
 <style>

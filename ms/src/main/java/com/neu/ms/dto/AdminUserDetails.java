@@ -12,9 +12,12 @@ import java.util.Collection;
  * 可以自定义自己需要的验证属性
  * Security这个框架不管你的应用时怎么存储用户和权限信息的。只要你取出来的时候把它包装成一个UserDetails对象给它用就行
  * 封装好这个类，丢给UserDetailsService认证即可
+ * @author 875600608
  */
 public class AdminUserDetails implements UserDetails {
-    //自定义验证账户名密码即可
+    /**
+     * 自定义验证账户名密码即可
+     */
     private MsAdmin admin;
 
     public AdminUserDetails(MsAdmin admin) {

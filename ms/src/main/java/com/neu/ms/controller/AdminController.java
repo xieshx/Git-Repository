@@ -1,6 +1,5 @@
 package com.neu.ms.controller;
 
-import cn.hutool.json.JSONUtil;
 import com.github.pagehelper.PageInfo;
 import com.neu.ms.common.api.CommonResult;
 import com.neu.ms.dto.AdminLoginParam;
@@ -8,14 +7,12 @@ import com.neu.ms.dto.AdminRegisterParam;
 import com.neu.ms.mbg.model.MsAdmin;
 import com.neu.ms.service.AdminService;
 import com.neu.ms.vo.AdminVo;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.beans.BeanUtils;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import java.security.Principal;
 import java.util.HashMap;
 import java.util.Map;
 

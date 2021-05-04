@@ -5,6 +5,9 @@ import lombok.Setter;
 
 import java.util.Date;
 
+/**
+ * @author 875600608
+ */
 @Getter
 @Setter
 public class AdminVo {

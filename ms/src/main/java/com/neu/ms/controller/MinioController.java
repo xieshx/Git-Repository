@@ -1,6 +1,7 @@
 package com.neu.ms.controller;
 
 import com.neu.ms.common.api.CommonResult;
+import com.neu.ms.dto.MinioUploadDto;
 import io.minio.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -51,10 +52,13 @@ public class MinioController {
                     .object(objectName)
                     .bucket(BUCKET_NAME)
                     .contentType(file.getContentType())
-                    .stream(file.getInputStream(),file.getSize(),ObjectWriteArgs.MIN_MULTIPART_SIZE).build();
+                    .stream(file.getInputStream(), file.getSize(), ObjectWriteArgs.MIN_MULTIPART_SIZE).build();
             minioClient.putObject(objectArgs);
             LOGGER.info("文件上传成功!");
-            return CommonResult.success(null);
+            MinioUploadDto minioUploadDto = new MinioUploadDto();
+            minioUploadDto.setFileName(filename);
+            minioUploadDto.setFileUrl(ENDPOINT + "/" + BUCKET_NAME + "/" + objectName);
+            return CommonResult.success(minioUploadDto);
         } catch (Exception e) {
             e.printStackTrace();
             LOGGER.info("上传发生错误: {}！", e.getMessage());
@@ -63,15 +67,15 @@ public class MinioController {
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
-    public CommonResult delete(@RequestParam("objectName") String objectName){
+    public CommonResult delete(@RequestParam("objectName") String objectName) {
         try {
             MinioClient minioClient = MinioClient.builder()
                     .endpoint(ENDPOINT)
-                    .credentials(ACCESS_KEY,SECRET_KEY)
+                    .credentials(ACCESS_KEY, SECRET_KEY)
                     .build();
             minioClient.removeObject(RemoveObjectArgs.builder().bucket(BUCKET_NAME).object(objectName).build());
             return CommonResult.success(null);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return CommonResult.failed("删除失败");

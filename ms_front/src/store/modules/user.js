@@ -3,6 +3,7 @@ import {getToken, removeToken, setToken} from '@/utils/auth';
 
 const user = {
 
+    // 定义数据
     state: {
         token: getToken(),
         avatar: ''
@@ -69,7 +70,9 @@ const user = {
                     reject(error)
                 })
             })
-        }
+        },
+
+
     }
 };
 
