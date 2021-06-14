@@ -1,16 +1,14 @@
 package com.neu.ms.controller;
 
-import com.github.pagehelper.PageInfo;
 import com.neu.ms.common.api.CommonResult;
 import com.neu.ms.dto.AdminLoginParam;
 import com.neu.ms.dto.AdminRegisterParam;
-import com.neu.ms.mbg.model.MsAdmin;
 import com.neu.ms.service.AdminService;
-import com.neu.ms.vo.AdminVo;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -50,48 +48,15 @@ public class AdminController {
         tokenMap.put("tokenHead", tokenHead);
         return CommonResult.success(tokenMap);
     }
-
     // 登出
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     public CommonResult logout() {
         return CommonResult.success(null);
     }
-
     // 用户注册
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public CommonResult register(@RequestBody AdminRegisterParam adminRegisterParam) {
         adminService.register(adminRegisterParam);
         return null;
     }
-
-    // 用户列表
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public CommonResult list(@RequestParam(value = "pageStart", defaultValue = "1") Integer pageStart,
-                             @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize) {
-        PageInfo adminList = adminService.getAdminList(pageStart, pageSize);
-        return CommonResult.success(adminList);
-    }
-
-    // 当前登录用户的信息
-    // 在JwtAuthenticationTokenFilter中已经将登录信息保存到安全上下文中了，
-    // 在Spring框架可以通过以下方法获取当前登录用户的信息：
-    // 1.在Bean中获取：Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-    // 2.在Controller的参数列表中获取用户信息：Principal principal（目前用此方法）
-    // 3.在Controller的参数列表中获取用户信息：Authentication authentication
-    // 4.通过HttpServletRequest获取：（感觉跟3没差）
-    // 在Controller的参数列表中HttpServletRequest request
-    // Principal principal = request.getUserPrincipal();
-    // 5.@AuthenticationPrincipal注解在，Controller的参数列表中@AuthenticationPrincipal UserDto user（使用自己的Dto）
-    @RequestMapping(value = "/info", method = RequestMethod.GET)
-    public CommonResult getInfo(Authentication principal) {
-        if(principal==null){
-            return CommonResult.unauthorized(null);
-        }
-        Map<String, Object> data = new HashMap<>();
-        MsAdmin admin = adminService.getAdminByUsername(principal.getName());
-        AdminVo adminVo=new AdminVo();
-        BeanUtils.copyProperties(admin, adminVo);
-        return CommonResult.success(adminVo);
-    }
-
 }

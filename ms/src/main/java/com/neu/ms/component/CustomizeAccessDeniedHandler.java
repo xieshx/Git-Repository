@@ -13,6 +13,7 @@ import java.io.IOException;
 
 /**
  * 用来解决认证过的用户访问无权限资源时的异常
+ * @author 875600608
  */
 @Component
 public class CustomizeAccessDeniedHandler implements AccessDeniedHandler {

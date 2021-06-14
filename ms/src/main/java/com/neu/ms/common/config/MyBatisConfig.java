@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * MyBatis配置类
  * 这个配置类让mapper文件上不用加@Mapper注解了
+ * @author 875600608
  */
 @Configuration
 @MapperScan("com.neu.ms.mbg.mapper")

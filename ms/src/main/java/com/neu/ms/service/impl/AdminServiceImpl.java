@@ -1,16 +1,12 @@
 package com.neu.ms.service.impl;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import com.neu.ms.common.utils.JwtTokenUtils;
-import com.neu.ms.common.utils.PageUtils;
 import com.neu.ms.dto.AdminLoginParam;
 import com.neu.ms.dto.AdminRegisterParam;
 import com.neu.ms.mbg.mapper.MsAdminMapper;
 import com.neu.ms.mbg.model.MsAdmin;
 import com.neu.ms.mbg.model.MsAdminExample;
 import com.neu.ms.service.AdminService;
-import com.neu.ms.vo.AdminVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -44,7 +40,6 @@ public class AdminServiceImpl implements AdminService {
     public MsAdmin getAdminByUsername(String username) {
         MsAdminExample example = new MsAdminExample();
         example.createCriteria().andUsernameEqualTo(username);
-        //通过debug发现mapper查询返回的list实现类是ArrayList
         List<MsAdmin> msAdmins = msAdminMapper.selectByExample(example);
         if (!msAdmins.isEmpty()) {
             return msAdmins.get(0);
@@ -66,17 +61,6 @@ public class AdminServiceImpl implements AdminService {
         }
         token = jwtTokenUtils.generateToken(userDetails);
         return token;
-    }
-
-
-    @Override
-    public PageInfo getAdminList(Integer pageStart, Integer pageSize) {
-        // 在需要进行分页的查询方法前调用这个静态方法，紧跟在后面的第一个查询方法会被分页
-        PageHelper.startPage(pageStart, pageSize);
-        MsAdminExample example = new MsAdminExample();
-        List<MsAdmin> msAdmins = msAdminMapper.selectByExample(example);
-        PageInfo<MsAdmin> pageInfo = new PageInfo<>(msAdmins);
-        return PageUtils.PageInfo2PageInfoVo(pageInfo, AdminVo.class);
     }
 
     // TODO:注册功能需要等待权限功能开发

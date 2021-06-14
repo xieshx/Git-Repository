@@ -13,9 +13,6 @@ public interface AdminService {
     //登录功能，成功后返回一个token
     String login(AdminLoginParam adminLoginParam);
 
-    //获取所有用户，生成列表
-    PageInfo getAdminList(Integer pageStart, Integer pageSize);
-
     //注册用户
     Boolean register(AdminRegisterParam adminRegisterParam);
 

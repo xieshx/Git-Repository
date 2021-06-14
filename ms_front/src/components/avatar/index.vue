@@ -76,9 +76,9 @@
                 const fromData = new FormData();
                 fromData.append('file', file);
                 uploadAvatar(fromData).then(response=>{
+                    // todo:目前头像未在数据库中修改，计划创建一个新的action专门处理修改用户信息
                     this.$store.commit('SET_AVATAR',response.data.fileUrl);
                     location.reload();
-                    console.log(this.$store.getters.avatarAddr)
                 })
             }
         }

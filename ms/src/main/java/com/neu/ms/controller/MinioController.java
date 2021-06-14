@@ -15,6 +15,9 @@ import org.springframework.web.multipart.MultipartFile;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * @author 875600608
+ */
 @RestController
 @RequestMapping("/minio")
 public class MinioController {

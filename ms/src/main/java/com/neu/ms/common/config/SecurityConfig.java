@@ -24,6 +24,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import javax.annotation.Resource;
 
+/**
+ * @author 875600608
+ */
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -96,6 +99,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     //获取用户登录信息
     //用UserDetailsService的方法去加载自定义的UserDetails
+    @Override
     @Bean
     public UserDetailsService userDetailsService() {
         // UserDetailsService中只有一个方法，可以用lambda直接返回一个UserDetails
