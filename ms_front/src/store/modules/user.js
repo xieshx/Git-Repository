@@ -1,4 +1,4 @@
-import {login, logout, getInfo} from "@/api/admin";
+import {login, logout} from "@/api/admin";
 import {getToken, removeToken, setToken} from '@/utils/auth';
 
 const user = {
@@ -59,18 +59,18 @@ const user = {
             })
         },
 
-        GetInfo({commit}) {
-            return new Promise((resolve, reject) => {
-                getInfo().then(response => {
-                    const data = response.data;
-                    commit('SET_NAME', data.username);
-                    commit('SET_AVATAR', data.avatarAddress);
-                    resolve(response)
-                }).catch(error => {
-                    reject(error)
-                })
-            })
-        },
+        // GetInfo({commit}) {
+        //     return new Promise((resolve, reject) => {
+        //         getInfo().then(response => {
+        //             const data = response.data;
+        //             commit('SET_NAME', data.username);
+        //             commit('SET_AVATAR', data.avatarAddress);
+        //             resolve(response)
+        //         }).catch(error => {
+        //             reject(error)
+        //         })
+        //     })
+        // },
 
 
     }

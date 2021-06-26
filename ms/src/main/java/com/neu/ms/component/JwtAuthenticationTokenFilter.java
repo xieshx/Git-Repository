@@ -24,6 +24,7 @@ import java.io.IOException;
  * 在spring中，filter都默认继承OncePerRequestFilter
  * SpringSecurity非常容易出现通一个filter被执行多遍，原因尚未探寻
  * OncePerRequestFilter是为了兼容不同的web 容器，也就是说其实不是所有的容器都过滤一次
+ * @author 875600608
  */
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtAuthenticationTokenFilter.class);

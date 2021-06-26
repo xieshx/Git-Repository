@@ -2,6 +2,10 @@ package com.neu.ms.common.api;
 
 import lombok.Getter;
 
+/**
+ * @author 875600608
+ */
+
 @Getter
 public enum ResultCode {
 

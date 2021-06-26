@@ -5,24 +5,26 @@ import router from '@/router/index'
 import NProgress from 'nprogress' // Progress 进度条
 import 'nprogress/nprogress.css' // Progress 进度条样式
 import {getToken} from "@/utils/auth";
-import store from '@/store'
+// import store from '@/store'
 
 // 白名单，随意访问
 const whiteList = ['/login', '/error', '/register'];
 
+// next():一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。
+// 1.next()进入路由 2.取消进入该路由，返回from 3.next(path:'')进入新路由
 router.beforeEach((to, from, next) => {
     NProgress.start();
+    // 若token已存在且未过期（用户已经登录了）
     if (getToken()) {
-        // 若token已存在（用户已经登录了），访问登录页面会直接跳转到主页
+        // TODO：token存在需要去后端判断是否过期
+        // 访问登录页面会直接跳转到主页
         if (to.path === '/login') {
             next({path: '/home'});
-            NProgress.done()
         } else {
             // 直接放行
-            // TODO:不同等级用户访问的权限的验证
             // 拉取当前用户的登录信息
-            store.dispatch('GetInfo').then();
-            next()
+            // store.dispatch('GetInfo').then();
+            next();
         }
     } else {
         // token不存在（用户未登录）
@@ -31,7 +33,6 @@ router.beforeEach((to, from, next) => {
             next()
         } else {
             next('/login');
-            NProgress.done()
         }
     }
 });

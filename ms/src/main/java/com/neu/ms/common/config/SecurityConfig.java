@@ -103,16 +103,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public UserDetailsService userDetailsService() {
         // UserDetailsService中只有一个方法，可以用lambda直接返回一个UserDetails
-        return username -> {
-            MsAdmin admin = adminService.getAdminByUsername(username);
-            if (admin != null) {
-                // TODO：在这里需要把从数据中获取到的该用户的权限构造进去，修改AdminUserDetails构造器
-                return new AdminUserDetails(admin);
-            }
-            // UsernameNotFoundException会转换成其父类AuthenticationException
-            // 在AuthenticationEntryPoint中抛出，并直接返回前端数据
-            throw new UsernameNotFoundException("用户名或密码错误！");
-        };
+        return username -> new AdminUserDetails(adminService.getAdminByUsername(username));
     }
 
     @Override
